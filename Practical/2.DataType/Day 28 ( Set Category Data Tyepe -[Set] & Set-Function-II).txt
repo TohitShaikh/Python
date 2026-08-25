@@ -1,0 +1,121 @@
+----------------------------------------------------------------------Set Category Data Type---------------------------------------------------------------------------
+--------------------------------------------------------------------------set------------------------------------------------------------------------------------------
+---------------------------------------------------
+4] discard()
+---------------------------------------------------
+>>> s1={10,20,30,40,50,60}
+>>> print(s1,type(s1)) ------> {50, 20, 40, 10, 60, 30} <class 'set'>
+>>> s1.discard(10)
+>>> print(s1,type(s1)) ------> {50, 20, 40, 60, 30} <class 'set'>
+>>> s1.discard(40)
+>>> print(s1,type(s1)) ------> {50, 20, 60, 30} <class 'set'>
+>>> s1.discard(50)
+>>> print(s1,type(s1)) ------> {20, 60, 30} <class 'set'>
+>>> s1.discard(600)
+>>> s1.remove(600) ------> KeyError: 600
+>>> print(s1.discard(400)) ------> None
+>>> print(set().discard(10)) ------> None
+
+---------------------------------------------------
+5] pop()
+---------------------------------------------------
+>>> s1={10,'Rossum',"Python",45.67,2+3j,False} #Order of display Not Given
+>>> s1.pop() ------> False
+>>> s1.pop() ------> 'Rossum'
+>>> s1.pop() ------> 10
+>>> s1.pop() ------> (2+3j)
+>>> s1.pop() ------> 45.67
+>>> s1.pop() ------> 'Python'
+>>> s1.pop() ------> KeyError: 'pop from an empty set'
+>>> set().pop() ------> KeyError: 'pop from an empty set'
+
+>>> s1={10,12,20,34,56,89,-12}
+>>> print(s1) ------> {34, 20, -12, 56, 89, 10, 12}
+>>> s1.pop() ------> 34
+>>> s1.pop() ------> 20
+>>> s1.pop() ------> -12
+>>> s1.pop() ------> 56
+>>> s1.pop() ------> 89
+>>> s1.pop() ------> 10
+>>> s1.pop() ------> 12
+>>> s1.pop() ------> KeyError: 'pop from an empty set'
+
+del operator---------------------------------
+>>> s={10,'Rossum',"Python",45.67,2+3j,False}
+>>> print(s) ------> {False, 'Rossum', 10, (2+3j), 45.67, 'Python'}
+>>> del s[0:3] ------> TypeError: 'set' object does not support item deletion
+>>> del s[2] ------> TypeError: 'set' object doesn't support item deletion
+>>> del s #It will delete physical object but the the indexing and slicing based operation are not allowed.
+>>> print(s) ------> NameError: name 's' is not defined. Did you mean: 's1'?
+
+---------------------------------------------------
+6] isdisjiont()
+---------------------------------------------------
+>>> s1={10,20,30}
+>>> s2={15,25,35}
+>>> s3={15,7,5,6}
+>>> s1.isdisjoint(s2) ------> True
+>>> s1.isdisjoint(s3) ------> True
+>>> s2.isdisjoint(s3) ------> False
+
+Special Point------------------
+>>> set().isdisjoint(set()) ------> True
+>>> {10,20,30}.isdisjoint(set()) ------> True
+
+---------------------------------------------------
+7] issuperset()
+---------------------------------------------------
+>>> s1={10,20,30,40,50}
+>>> s2={10,20,30}
+>>> s3={15,25,50,40}
+
+>>> s1.issuperset(s2) ------> True
+>>> s1.issuperset(s3) ------> False
+>>> s2.issuperset(s3) ------> False
+>>> s3.issuperset(s2) ------> False
+>>> s2.issuperset(s1) ------> False
+
+---------------------------------------------------
+8] issubset()
+---------------------------------------------------
+>>> s1={10,20,30,40,50}
+>>> s2={10,20,30}
+>>> s3={15,25,50,40}
+>>> s2.issubset(s1) ------> True
+>>> s2.issubset(s3) ------> False
+>>> s1.issubset(s2) ------> False
+>>> s1.issubset(s3) ------> False
+
+Special-Point-----------------------------
+>>> s1={10,20,30}
+>>> s1.issubset(s1) ------> True
+>>> s1.issuperset(s1) ------> True
+>>> set().issuperset(set()) ------> True
+>>> set().issuperset({10,20,30}) ------> False
+>>> {10,20,30}.issuperset(set()) ------> True
+>>> set().issubset({10,20,30}) ------> True
+
+---------------------------------------------------
+Rough Work
+---------------------------------------------------
+>>> s1={10,20,30}
+>>> s2={15,10,25}
+
+>>> s3=s1.union(s2)
+>>> print(s3,type(s3)) ------> {20, 25, 10, 30, 15} <class 'set'>
+
+>>> s4=s1.intersection(s2)
+>>> print(s4,type(s4)) ------> {10} <class 'set'>
+
+>>> s5=s1.difference(s2)
+>>> print(s5,type(s5)) ------> {20, 30} <class 'set'>
+
+>>> s6=s2.difference(s1)
+>>> print(s6,type(s6)) ------> {25, 15} <class 'set'>
+
+>>> s7=s1.symmetric_difference(s2)
+>>> print(s7,type(s7)) ------> {15, 20, 25, 30} <class 'set'>
+
+>>> s8=s1.union(s2).difference(s1.intersection(s2))
+>>> print(s8,type(s8)) ------> {25, 20, 30, 15} <class 'set'>
+==========================================================================X============================================================================================

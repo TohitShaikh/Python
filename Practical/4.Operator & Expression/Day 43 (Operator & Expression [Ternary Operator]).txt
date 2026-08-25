@@ -1,0 +1,199 @@
+-----------------------------------------------------------------------Operator & Expression---------------------------------------------------------------------------
+-------------------------------------------------------------------------Ternary Operator------------------------------------------------------------------------------
+-------------
+Example-1
+-------------
+#Program for finding biggest of two number by using ternary operator
+#BigTwoEx1.py
+a=int(input('Enter First Value: '))
+b=int(input('Enter Second Value: '))
+#Logic for big
+big_value= a if a>b else b
+#Displaying the result
+print('*'*50)
+print('Biggest Value between {} & {} is {}'.format(a,b,big_value))
+print('*'*50)
+
+ ----->	Enter First Value: 34
+	Enter Second Value: 26
+	**************************************************
+	Biggest Value between 34 & 26 is 34
+	**************************************************
+
+-------------
+Example-2
+-------------
+#Program for finding biggest of two number and check for equality by using ternary operator
+#BigTwoEx2.py
+a=int(input('Enter First Value: '))
+b=int(input('Enter Second Value: '))
+#Logic for finding bigger and equal value
+res=a if a>b else b if b>a else 'Both the values are same'
+#Displaying the result
+print('*'*60)
+print('Biggest Value between ({},{}) is {}'.format(a,b,res))
+print('*'*60)
+
+ ----->	Enter First Value: 10
+	Enter Second Value: 10
+	**************************************************
+	Biggest Value between (10,10) is Both the values are same
+	**************************************************
+
+-------------
+Example-3
+-------------
+#Program which will accept numerical integer value and decide whether it Positive Negative or Zero
+#Pos-Neg-Zero.py
+n=int(input('Enter a Number: '))
+
+#Logic
+res='Zero' if (n==0) else 'Positive Number' if n>0 else 'Negative Number'
+
+#Displaying the result
+print('*'*60)
+print('{} is {}'.format(n,res))
+print('*'*60)
+
+ ----->	Enter a Number: 20
+	**************************************************
+	20 is Positive Number
+	**************************************************
+
+ ----->	Enter a Number: -9
+	**************************************************
+	-9 is Negative Number
+	**************************************************
+
+ ----->	Enter a Number: 0
+	**************************************************
+	0 is Zero
+	**************************************************
+
+-------------
+Example-4
+-------------
+#Program which will accept numerical integer val or float value and decide whether it is even or odd
+#Even-Odd.py
+n=int(input('Enter a Number: '))
+
+#Logic for finding odd or even number
+res= 'Even' if n%2==0 else 'Odd'
+
+#Displaying the result
+print('*'*50)
+print('{} is {}'.format(n,res))
+print('*'*50)
+
+ ----->	Enter a Number: 77
+	**************************************************
+	77 is Odd
+	**************************************************
+
+ ----->	Enter a Number: 14
+	**************************************************
+	14 is Even
+	**************************************************
+
+-------------
+Example-5
+-------------
+#Program which will accept numerical integer val or float value and decide whether it is even or odd with Positive Number
+#If User enter Negative Number then display Invalid Input
+#Even-Odd-Pos.py
+n=int(input('Enter a Number: '))
+
+#Logic for finding odd or even number positive number
+res= 'Invalid Input' if (n<0) else 'Even' if n%2==0 else 'Odd'
+
+#Displaying the result
+print('*'*50)
+print('{} is {}'.format(n,res))
+print('*'*50)
+
+ ----->	Enter a Number: -12
+	**************************************************
+	-12 is Invalid Input
+	**************************************************
+
+ ----->	Enter a Number: 12
+	**************************************************
+	12 is Even
+	**************************************************
+
+ ----->	Enter a Number: 13
+	**************************************************
+	13 is Odd
+	**************************************************
+
+-------------
+Example-6
+-------------
+#Program for deciding the word is vowel or not
+#VowelorNot.py
+word=input('Enter a Word: ')
+
+#Logic
+res='Vowel Word' if 'a' in word or 'e' in word or 'i' in word or 'o' in word or 'u' in word or 'A' in word or 'E' in word or 'I' in word  or 'O' in word or 'U' in word  else 'Not a Vowel Word'
+
+#Displaying the result
+print('*'*50)
+print('{} is {} ' .format(word,res))
+print('*'*50)
+
+ -----> Enter a Word: APPLE
+	**************************************************
+	APPLE is Vowel Word 
+	**************************************************	
+
+ ----->	Enter a Word: sky
+	**************************************************
+	sky is Not a Vowel Word 
+	**************************************************
+
+-------------
+Example-6
+-------------
+#program accepting a word or balue and decinding whether a word is palindrome or not
+#Palindrome.py
+value=input('Enter a Value: ')
+
+#Logic for checking palindrome
+res= 'Palindrome' if value==value[::-1] else 'Not Palindrome'
+
+#Displaying the Result
+print('*'*50)
+print('{} is {} ' .format(value,res))
+print('*'*50)
+
+ -----> Enter a Value: tohit
+	**************************************************
+	tohtohit is Not Palindrome 
+	**************************************************
+ -----> Enter a Word: racecar
+	**************************************************
+	racecar is Vowel Word 
+	**************************************************
+
+ShortHand Operator--------------------------------------------------------------
+>>> a=10
+>>> b=2
+>>>
+>>> a+=1 
+>>> print(a) ----->11
+
+>>> a-=1
+>>> print(a) ----->10
+
+>>> a*=1
+>>> print(a) ----->10
+
+>>> a%=1
+>>> print(a) ----->0
+
+>>> a/=1
+>>> print(a) ----->0.0
+
+>>> a**=1
+>>> print(a) ----->0.0
+=====================================================================================X=================================================================================

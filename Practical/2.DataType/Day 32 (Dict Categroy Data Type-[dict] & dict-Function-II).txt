@@ -1,0 +1,366 @@
+--------------------------------------------------------------------Operation on List Object---------------------------------------------------------------------------
+----------------------------------------------------------------------------dict---------------------------------------------------------------------------------------
+-------------------------------------------------------------
+Pre-Defined Function In list
+-------------------------------------------------------------
+---------------------------------------------------
+3] clear()
+---------------------------------------------------
+>>> d1={10:1.2,20:2.3,30:3.6,40:4.9,50:5.0}
+>>> print(d1,type(d1),id(d1)) ------> {10: 1.2, 20: 2.3, 30: 3.6, 40: 4.9, 50: 5.0} <class 'dict'> 1691075566336
+>>> len(d1) ------> 5
+>>> d1.clear()
+>>> print(d1,type(d1),id(d1)) ------> {} <class 'dict'> 1691075566336
+>>> len(d1) ------> 0
+
+>>> {}.clear() ------> Space as a result 
+>>> print({}.clear()) ------> None
+>>> dict().clear() ------> Space as a result
+>>> print(dict().clear()) ------> None
+
+---------------------------------------------------
+4] copy()
+---------------------------------------------------
+>>> d1={10:1.2,20:2.3,30:3.6,40:4.9,50:5.0}
+>>> print(d1,type(d1),id(d1)) ------> {10: 1.2, 20: 2.3, 30: 3.6, 40: 4.9, 50: 5.0} <class 'dict'> 1691075566656
+>>> d2=d1.copy()
+>>> print(d2,type(d2),id(d2)) ------> {10: 1.2, 20: 2.3, 30: 3.6, 40: 4.9, 50: 5.0} <class 'dict'> 1691075566208
+>>> d1[10]=2.3 #Modification are idol to their object
+>>> d2[10]=6.3
+>>> print(d1,type(d1),id(d1)) ------> {10: 2.3, 20: 2.3, 30: 3.6, 40: 4.9, 50: 5.0} <class 'dict'> 1691075566656
+>>> print(d2,type(d2),id(d2)) ------> {10: 6.3, 20: 2.3, 30: 3.6, 40: 4.9, 50: 5.0} <class 'dict'> 1691075566208
+
+---------------------------------------------------
+5] get()
+---------------------------------------------------
+>>> d1={10:1.2,20:2.3,30:3.6,40:4.9,50:5.0}
+>>> print(d1) ------> {10: 1.2, 20: 2.3, 30: 3.6, 40: 4.9, 50: 5.0}
+>>> bal=d1.get(10)
+>>> print(bal) ------> 1.2
+>>> d1.get(20) ------> 2.3
+>>> bal=d1.get(30)
+>>> print(bal) ------> 3.6
+>>> bal=d1.get(101)
+>>> print(bal) ------> None
+>>> d1.get(120) ------> Space as a Result
+
+Alternate Way------------------------------
+>>> d1={10:1.2,20:2.3,30:3.6,40:4.9,50:5.0}
+>>> print(d1) ------> {10: 1.2, 20: 2.3, 30: 3.6, 40: 4.9, 50: 5.0}
+>>> d1[10] ------> 1.2
+>>> d1[20] ------> 2.3
+>>> d1[200] ------> KeyError: 200
+
+---------------------------------------------------
+6] keys()
+---------------------------------------------------
+>>> d1={10:1.2,20:2.3,30:3.6,40:4.9,50:5.0}
+>>> print(d1) ------> {10: 1.2, 20: 2.3, 30: 3.6, 40: 4.9, 50: 5.0}
+>>> ks=d1.keys()
+>>> print(ks,type(ks)) ------> dict_keys([10, 20, 30, 40, 50]) <class 'dict_keys'>
+>>> for k in ks:
+...     print(k)
+...
+10
+20
+30
+40
+50
+
+>>> for k in d1.keys():
+...     print(k)
+...
+10
+20
+30
+40
+50
+
+>>> for k in {'Kar':'Bang','Tamil':'Che','Maha':'Mum'}:
+...     print(k)
+...
+Kar
+Tamil
+Maha
+
+---------------------------------------------------
+7] values()
+---------------------------------------------------
+>>> d1={10:1.2,20:2.3,30:3.6,40:4.9,50:5.0}
+>>> print(d1) ------> {10: 1.2, 20: 2.3, 30: 3.6, 40: 4.9, 50: 5.0}
+>>> vs=d1.values()
+>>> print(vs,type(vs)) ------> dict_values([1.2, 2.3, 3.6, 4.9, 5.0]) <class 'dict_values'>
+>>> for v in vs:
+...     print(v)
+...
+1.2
+2.3
+3.6
+4.9
+5.0
+>>> for v in d1.values():
+...     print(v)
+...
+1.2
+2.3
+3.6
+4.9
+5.0
+>>> for v in {'Kar':'Bang','Tamil':'Che','Maha':'Mum'}.values():
+...     print(v)
+...
+Bang
+Che
+Mum
+
+Special Point------------------------------------------
+>>> for v in {'Kar':'Bang','Tamil':'Che','Maha':'Mum'}:
+...     print(v)
+... 	#If we don't specify the attribute like keys/values by default it will return keys.
+Kar
+Tamil
+Maha
+
+>>> for v in {'Kar':'Bang','Tamil':'Che','Maha':'Mum'}:
+...     print(v,'----->',{'Kar':'Bang','Tamil':'Che','Maha':'Mum'}.get(v))
+...
+Kar -----> Bang
+Tamil -----> Che
+Maha -----> Mum
+---------------------------------------------------
+8] items()
+---------------------------------------------------
+>>> d1={10:1.2,20:2.3,30:3.6,40:4.9,50:5.0}
+>>> print(d1) -----> {10: 1.2, 20: 2.3, 30: 3.6, 40: 4.9, 50: 5.0}
+>>> its=d1.items()
+>>> print(its,type(its)) -----> dict_items([(10, 1.2), (20, 2.3), (30, 3.6), (40, 4.9), (50, 5.0)]) <class 'dict_items'>
+
+
+>>> for x in its:
+...     print(x)
+...
+(10, 1.2)
+(20, 2.3)
+(30, 3.6)
+(40, 4.9)
+(50, 5.0)
+
+>>> for x in its:
+...     print(x,type(x))
+...
+(10, 1.2) <class 'tuple'>
+(20, 2.3) <class 'tuple'>
+(30, 3.6) <class 'tuple'>
+(40, 4.9) <class 'tuple'>
+(50, 5.0) <class 'tuple'>
+
+>>> for x in d1.items():
+...     print(x,type(x))
+...
+(10, 1.2) <class 'tuple'>
+(20, 2.3) <class 'tuple'>
+(30, 3.6) <class 'tuple'>
+(40, 4.9) <class 'tuple'>
+(50, 5.0) <class 'tuple'>
+
+>>> for k,v in d1.items():
+...     print(k,'--->',v)
+...
+10 ---> 1.2
+20 ---> 2.3
+30 ---> 3.6
+40 ---> 4.9
+50 ---> 5.0
+
+---------------------------------------------------
+9] update()
+---------------------------------------------------
+>>> d1={10:1.2,20:2.3}
+>>> d2={'Python':1,'C':2}
+>>> d1.update(d2)
+>>> print(d1) -----> {10: 1.2, 20: 2.3, 'Python': 1, 'C': 2}
+>>> d2.update(d1)
+>>> print(d2) -----> {'Python': 1, 'C': 2, 10: 1.2, 20: 2.3}
+
+>>> d1={10:1.2,20:2.3}
+>>> d2={10:11.2,20:2.3}
+>>> d1.update(d2)
+>>> print(d1) -----> {10: 11.2, 20: 2.3}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------Complex Dict Object--------------------------------------------------------------------------------
+
+dict in dict-----------------------------------
+>>> d1={'sno':10,'name':'RS','IntMarks':{'C':16,'C++':18,'Python':17},'Extmarks':{'C':60,'C++':78,'Pyt\hon':62},'Colname':'OUCET'}
+>>> print(d1) -----> {'sno': 10, 'name': 'RS', 'IntMarks': {'C': 16, 'C++': 18, 'Python': 17}, 'Extmarks': {'C': 60, 'C++': 78, 'Python': 62}, 'Colname': 'OUCET'}
+>>> print(d1,type(d1)) -----> {'sno': 10, 'name': 'RS', 'IntMarks': {'C': 16, 'C++': 18, 'Python': 17}, 'Extmarks': {'C': 60, 'C++': 78, 'Python': 62}, 'Colname': 'OUCET'} <class 'dict'>
+
+>>> for k,v in d1.items():
+...     print(k,'---->',v,'--->',type(v),'--->',type(d1))
+...
+sno ----> 10 ---> <class 'int'> ---> <class 'dict'>
+name ----> RS ---> <class 'str'> ---> <class 'dict'>
+IntMarks ----> {'C': 16, 'C++': 18, 'Python': 17} ---> <class 'dict'> ---> <class 'dict'>
+Extmarks ----> {'C': 60, 'C++': 78, 'Python': 62} ---> <class 'dict'> ---> <class 'dict'>
+Colname ----> OUCET ---> <class 'str'> ---> <class 'dict'>
+
+>>> d1.get('IntMarks')
+{'C': 16, 'C++': 18, 'Python': 17}
+>>> for k,v in d1.get('IntMarks').items():
+...     print(k,'--->',v)
+...
+C ---> 16
+C++ ---> 18
+Python ---> 17
+
+>>> for x in d1.get('IntMarks'):
+...     print(x,'--->',d1.values())
+...
+C ---> dict_values([10, 'RS', {'C': 16, 'C++': 18, 'Python': 17}, {'C': 60, 'C++': 78, 'Python': 62}, 'OUCET'])
+C++ ---> dict_values([10, 'RS', {'C': 16, 'C++': 18, 'Python': 17}, {'C': 60, 'C++': 78, 'Python': 62}, 'OUCET'])
+Python ---> dict_values([10, 'RS', {'C': 16, 'C++': 18, 'Python': 17}, {'C': 60, 'C++': 78, 'Python': 62}, 'OUCET'])
+
+>>> for x in d1.get('IntMarks'):
+...     print(x,'--->',d1.get('IntMarks').items())
+...
+C ---> dict_items([('C', 16), ('C++', 18), ('Python', 17)])
+C++ ---> dict_items([('C', 16), ('C++', 18), ('Python', 17)])
+Python ---> dict_items([('C', 16), ('C++', 18), ('Python', 17)])
+
+>>> for x in d1.get('IntMarks'):
+...     print(x,'--->',d1.get('IntMarks').get(x))
+...
+C ---> 16
+C++ ---> 18
+Python ---> 17
+
+>>> for x in d1.get('IntMarks'):
+...     print(x,'--->',d1.get('IntMarks')[x])
+...
+C ---> 16
+C++ ---> 18
+Python ---> 17
+
+Modifiaction--------------------------------------------------
+>>> d1={'sno':10,'name':'RS','IntMarks':{'C':16,'C++':18,'Python':17},'Extmarks':{'C':60,'C++':78,'Pyt\hon':62},'Colname':'OUCET'}
+>>> print(d1) -----> {'sno': 10, 'name': 'RS', 'IntMarks': {'C': 16, 'C++': 18, 'Python': 17}, 'Extmarks': {'C': 60, 'C++': 78, 'Python': 62}, 'Colname': 'OUCET'}
+>>> d1['IntMarks']['C']=20
+>>> print(d1) -----> {'sno': 10, 'name': 'RS', 'IntMarks': {'C': 20, 'C++': 18, 'Python': 17}, 'Extmarks': {'C': 60, 'C++': 78, 'Python': 62}, 'Colname': 'OUCET'}
+
+>>> d1['Extmarks']['Python']=32
+>>> print(d1) -----> {'sno': 10, 'name': 'RS', 'IntMarks': {'C': 20, 'C++': 18, 'Python': 17}, 'Extmarks': {'C': 60, 'C++': 78, 'Python': 32}, 'Colname': 'OUCET'}
+
+>>> d1['TotalMarks']=dict()
+>>> print(d1) -----> {'sno': 10, 'name': 'RS', 'IntMarks': {'C': 20, 'C++': 18, 'Python': 17}, 'Extmarks': {'C': 60, 'C++': 78, 'Python': 32}, 'Colname': 'OUCET', 'TotalMarks': {}}
+
+>>> d1['TotalMarks']={'C':80,'C++':80,'Python':49}
+>>> print(d1) -----> {'sno': 10, 'name': 'RS', 'IntMarks': {'C': 20, 'C++': 18, 'Python': 17}, 'Extmarks': {'C': 60, 'C++': 78, 'Python': 32}, 'Colname': 'OUCET', 'TotalMarks': {'C': 80, 'C++': 80, 'Python': 49}}
+                                                                 OR
+
+
+list in dict----------------------------------------------
+>>> d1={'Sno':10,'Name':'RS','IntMarks':[16,17,12],'Extmarks':[34,56,89],'ColName':'OUCET'}
+>>> print(d1,type(d1)) -----> {'Sno': 10, 'Name': 'RS', 'IntMarks': [16, 17, 12], 'Extmarks': [34, 56, 89], 'ColName': 'OUCET'} <class 'dict'>
+
+>>> for k,v in d1.items():
+...     print(k,'---->',v,'--->',type(v),'--->',type(d1))
+...
+Sno ----> 10 ---> <class 'int'> ---> <class 'dict'>
+Name ----> RS ---> <class 'str'> ---> <class 'dict'>
+IntMarks ----> [16, 17, 12] ---> <class 'list'> ---> <class 'dict'>
+Extmarks ----> [34, 56, 89] ---> <class 'list'> ---> <class 'dict'>
+ColName ----> OUCET ---> <class 'str'> ---> <class 'dict'>
+>>>
+
+>>> d1['IntMarks'].append(13)
+>>> print(d1) -----> {'Sno': 10, 'Name': 'RS', 'IntMarks': [16, 17, 12, 13], 'Extmarks': [34, 56, 89], 'ColName': 'OUCET'}
+
+>>> d1.get("Extmarks").insert(1,99)
+>>> print(d1) -----> {'Sno': 10, 'Name': 'RS', 'IntMarks': [16, 17, 12, 13], 'Extmarks': [34, 99, 56, 89], 'ColName': 'OUCET'}
+
+tuple in dict---------------------------------------------------------
+>>> d1={'Sno':10,'Name':'RS','IntMarks':(16,17,12),'Extmarks':(34,56,89),'ColName':'OUCET'}
+>>> print(d1,type(d1)) -----> {'Sno': 10, 'Name': 'RS', 'IntMarks': (16, 17, 12), 'Extmarks': (34, 56, 89), 'ColName': 'OUCET'} <class 'dict'>
+>>> for k,v in d1.items():
+...     print(k,'---->',v,'--->',type(v),'--->',type(d1))
+...
+Sno ----> 10 ---> <class 'int'> ---> <class 'dict'>
+Name ----> RS ---> <class 'str'> ---> <class 'dict'>
+IntMarks ----> (16, 17, 12) ---> <class 'tuple'> ---> <class 'dict'>
+Extmarks ----> (34, 56, 89) ---> <class 'tuple'> ---> <class 'dict'>
+ColName ----> OUCET ---> <class 'str'> ---> <class 'dict'>
+
+>>> d1['IntMarks']=tuple(sorted(d1['IntMarks']))
+>>> print(d1) -----> {'Sno': 10, 'Name': 'RS', 'IntMarks': (12, 16, 17), 'Extmarks': (34, 56, 89), 'ColName': 'OUCET'}
+>>>
+>>> d1['Extmarks']=tuple(sorted(d1.get('Extmarks'))[::-1])
+>>> print(d1) -----> {'Sno': 10, 'Name': 'RS', 'IntMarks': (12, 16, 17), 'Extmarks': (89, 56, 34), 'ColName': 'OUCET'}
+
+set in dict------------------------------------------------------------
+>>> d1={'Sno':10,'Name':'RS','IntMarks':{16,17,12},'Extmarks':{34,56,89},'ColName':'OUCET'}
+>>> print(d1) -----> {'Sno': 10, 'Name': 'RS', 'IntMarks': {16, 17, 12}, 'Extmarks': {56, 89, 34}, 'ColName': 'OUCET'}
+
+>>> for k,v in d1.items():
+...     print(k,'---->',v,'--->',type(v),'--->',type(d1))
+...
+Sno ----> 10 ---> <class 'int'> ---> <class 'dict'>
+Name ----> RS ---> <class 'str'> ---> <class 'dict'>
+IntMarks ----> {16, 17, 12} ---> <class 'set'> ---> <class 'dict'>
+Extmarks ----> {56, 89, 34} ---> <class 'set'> ---> <class 'dict'>
+ColName ----> OUCET ---> <class 'str'> ---> <class 'dict'>
+>>> d1.get('IntMarks').discard(17)
+>>> print(d1)
+{'Sno': 10, 'Name': 'RS', 'IntMarks': {16, 12}, 'Extmarks': {56, 89, 34}, 'ColName': 'OUCET'}
+
+>>> d1['IntMarks'].add(17)
+>>> print(d1) -----> {'Sno': 10, 'Name': 'RS', 'IntMarks': {16, 17, 12}, 'Extmarks': {56, 89, 34}, 'ColName': 'OUCET'}
+
+>>> d1.get('Extmarks').clear()
+>>> print(d1) -----> {'Sno': 10, 'Name': 'RS', 'IntMarks': {16, 17, 12}, 'Extmarks': set(), 'ColName': 'OUCET'}
+
+>>> d1.get('Extmarks').add(10)
+>>> print(d1) -----> {'Sno': 10, 'Name': 'RS', 'IntMarks': {16, 17, 12}, 'Extmarks': {10}, 'ColName': 'OUCET'}
+
+set in dict-----------------------------------------------------------
+>>> s1={10,'RS',{'C':1,'C++':2},'OUCET'} -----> TypeError: cannot use 'dict' as a set element (unhashable type: 'dict')
+
+tuple in set-------------------------------------------------------------
+>>> t1=(10,'RS',{'C':1,'C++':2},'OUCET')
+>>> print(t1,type(t1)) -----> (10, 'RS', {'C': 1, 'C++': 2}, 'OUCET') <class 'tuple'>
+
+>>> for val in t1:
+...     print(t1)
+...
+(10, 'RS', {'C': 1, 'C++': 2}, 'OUCET')
+(10, 'RS', {'C': 1, 'C++': 2}, 'OUCET')
+(10, 'RS', {'C': 1, 'C++': 2}, 'OUCET')
+(10, 'RS', {'C': 1, 'C++': 2}, 'OUCET')
+
+>>> for val in t1:
+...     print(val,'--->',type(val),'--->',type(t1))
+...
+10 ---> <class 'int'> ---> <class 'tuple'>
+RS ---> <class 'str'> ---> <class 'tuple'>
+{'C': 1, 'C++': 2} ---> <class 'dict'> ---> <class 'tuple'>
+OUCET ---> <class 'str'> ---> <class 'tuple'>
+
+>>> t1[2]['Python']=45
+>>> print(t1) -----> (10, 'RS', {'C': 1, 'C++': 2, 'Python': 45}, 'OUCET')
+>>> t1[-2].pop('C++') -----> 2
+>>> print(t1) -----> (10, 'RS', {'C': 1, 'Python': 45}, 'OUCET')
+
+list in tuple----------------------------------------------------------
+>>> t1=[10,'RS',{'C':1,'C++':2},'OUCET']
+>>> print(t1,type(t1)) -----> [10, 'RS', {'C': 1, 'C++': 2}, 'OUCET'] <class 'list'>
+
+>>> for val in t1:
+...     print(val,'--->',type(val),'--->',type(t1))
+...
+10 ---> <class 'int'> ---> <class 'list'>
+RS ---> <class 'str'> ---> <class 'list'>
+{'C': 1, 'C++': 2} ---> <class 'dict'> ---> <class 'list'>
+OUCET ---> <class 'str'> ---> <class 'list'>
+
+>>> t1.append({'x':1,'y':2})
+>>> print(t1) -----> [10, 'RS', {'C': 1, 'C++': 2}, 'OUCET', {'x': 1, 'y': 2}]
+=================================================================================X=====================================================================================

@@ -1,0 +1,73 @@
+---------------------------------------------------------Displaying the result of Python Program-----------------------------------------------------------------------
+Pycharm Installation in the forst part of the video
+------------------------------------------------------------
+Syntax-1 print(Val1) OR print(Val1,Val2,....,Val3)  
+-----------------------------------------------------------
+>>> a=10
+>>> b=10
+>>> c=a+b
+>>> print(a,b,c) ------> 10 10 20
+>>> print(100,200,-90) ------> 100 200 -90
+
+--------------------------------------------------------------------------------------
+Syntax-2 print(Msg1) OR print(Msg1,Msg2,....,Msg3) OR  print(Msg1+Msg2+....+Msg3)
+----------------------------------------------------------------------------------------
+>>> print('Hello Python Program') ------> Hello Python Program
+>>> print("Hello",'Python','''Prog''') ------> Hello Python Prog
+>>> print('Hello'+'Python'+'Prog') ------> HelloPythonProg
+>>> print('Hello'+' Python'+' Prog') ------> Hello Python Prog
+
+--------------------------------------------------------------------------------------
+Syntax-3 print(Messages cum Values) OR print(Values cum Messages)
+--------------------------------------------------------------------------------------
+>>> a=10
+>>> print(10) ------> 10
+>>> #Value of a is 10
+>>> print('Value of a is',a) ------> Value of a is 10
+>>> #10 is the value of a
+>>> print(a,'is the value of a') ------> 10 is the value of a
+
+>>> a=10
+>>> b=20
+>>> c=a+b
+>>> #sum=30
+>>> print('Sum=',c) ------> Sum= 30
+>>> #30 is the sum
+>>> print(c,"is the sum") ------> 30 is the sum
+
+>>> a=10
+>>> b=20
+>>> c=a+b
+>>> #Sum of 10 and 20 is 30
+>>> print('Sum of ',a,'and',b,'is',c) ------> Sum of  10 and 20 is 30
+
+>>> a=10
+>>> b=20
+>>> c=30
+>>> d=a+b+c
+>>> #Sum of 10,20 and 30 is 60
+>>> print('Sum of',a',',b,'and',c,'is'd) ------> Sum of 10 , 20 and 30 is 60
+
+--------------------------------------------------------------------------------------------------
+Syntax-4 print(Messages cum Values with format()) OR print(Values cum Messages with format())
+--------------------------------------------------------------------------------------------------
+>>> a=10
+>>> print('Val of a is {}'.format(a)) ------> Val of a is 10
+>>> #10 is the value of a
+>>> print('{} is the value of a'.format(a)) ------> 10 is the value of a
+
+>>> a=10
+>>> b=20
+>>> c=a+b
+>>> #Sum of 10 and 20 is 30
+>>> print('Sum of {} and {} is {}'.format(a,b,c)) ------> Sum of 10 and 20 is 30
+>>> #Sum of (10,20) is 30
+>>> print('Sum of ({},{}) is {}'.format(a,b,c)) ------> Sum of (10,20) is 30
+
+>>> a=10
+>>> b=20
+>>> c=30
+>>> d=a+b+c
+>>> #Sum of 10,20 and 30 is 60
+>>> print('Sum of {} , {} and {} is {}'.format(a,b,c,d)) ------> Sum of 10 , 20 and 30 is 60
+==================================================================================X====================================================================================

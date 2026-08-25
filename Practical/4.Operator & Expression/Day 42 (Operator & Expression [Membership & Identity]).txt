@@ -1,0 +1,257 @@
+-----------------------------------------------------------------------Operator & Expression---------------------------------------------------------------------------
+-------------------------------------------------------------------------Memebership Operator--------------------------------------------------------------------------
+in operator-----------------------------------------------------------
+-------------------
+Example-1
+-------------------
+>>> s='PYTHON'
+>>> 'P' in s -----> True
+>>> 'P'not in s -----> False
+>>> 'N'not in s -----> False
+>>> 'N'in s -----> True
+
+>>> 'PYT' in s -----> True
+>>> 'HON' not in s -----> False
+>>> 'HON' in s -----> True
+
+>>> 'PTO' in s -----> False
+>>> 'PTO' not in s -----> True
+>>>
+>>> 'NOH' not in s -----> True
+>>> 'HON' in s -----> True
+
+-------------------
+Example-2
+-------------------
+>>> s='PYTHON'
+>>> 'PTO' in s[::2] -----> True
+>>> 'NOH' not in s[::-1] -----> False
+>>> 'NOH' in s[::-1] -----> True
+
+>>> lst=[10,'Rossum',34.45,2+3j]
+>>> print(lst) -----> [10, 'Rossum', 34.45, (2+3j)]
+>>> 34.45 in lst -----> True
+>>> 34.45 not in lst -----> False
+>>> 'Ross' in lst -----> False
+>>> 'Ross' in lst[1] -----> True
+>>> 2+3j in lst -----> True
+>>> 10 not in lst[::-1] -----> False
+>>> 100 not in lst[::-1] -----> True
+
+Special Point------------------------------------------
+#It will the value fro the lsit will be non-iterable so it will show typeerror
+>>> 2+3j in lst[-1] -----> TypeError: argument of type 'complex' is not a container or iterable
+
+>>> 2+3j.real in lst[-1] -----> TypeError: argument of type 'complex' is not a container or iterable
+
+>>> 2+3j.real not in lst[-1].real -----> TypeError: argument of type 'float' is not a container or iterable
+
+
+>>> d1={10:'Apple',20:'Mango',30:'Kiwi'}
+>>> print(d1,type(d1))-----> {10: 'Apple', 20: 'Mango', 30: 'Kiwi'} <class 'dict'>
+>>> 'Apple' in d1-----> False
+>>> 10 in d1-----> True
+>>> 'kiwi' not in d1-----> True
+>>> 'Apple' not in d1.values()-----> False
+>>> d1[10] not in d1.values()-----> False
+>>> (10,'Apple') in d1.items()-----> True
+
+>>> 'a' in {'a','e','i','o','u'} -----> True
+>>> {'a','e'} in {'a','e','i','o','u'} -----> False
+
+Bug------------------------------------------
+>>> [10,20,30] in [10,20,30,40,50] -----> False
+>>> lst=[10,20,30]
+>>> lst1=[10,20,30,40,50,60,70]
+>>> lst in lst1 -----> False
+
+-------------------------------------------------------------------------Identity Operator--------------------------------------------------------------------------
+>>> lst=[10,20,30]
+>>> lst1=[10,20,30]
+>>> lst2=lst1 #Deep Copy
+
+>>> print(lst1,type(lst1),id(lst1)) -----> [10, 20, 30] <class 'list'> 2079236107136
+>>> print(lst2,type(lst2),id(lst2)) -----> [10, 20, 30] <class 'list'> 2079236107136
+>>> lst1 is lst2 -----> True
+>>> lst1 is not lst2 -----> False
+
+>>> lst1=[10,20,30]
+>>> lst2=lst1.copy() #Shallow copy
+>>> lst1 is lst2 -----> False
+>>> lst1 is not lst2 -----> True
+
+None------------------------------------------
+#None is keyword and it will sahre the same memeory address
+>>> a=None
+>>> b=None
+>>> print(a,id(a)) -----> None 140731339033408
+>>> print(b,id(b)) -----> None 140731339033408
+>>> a is b -----> True
+>>> a is not b -----> False
+
+dict-------------------------------------------
+>>> d1={10:'Apple',20:'Mango'}
+>>> d2={10:'Apple',20:'Mango'}
+>>> print(d1,id(d1)) -----> {10: 'Apple', 20: 'Mango'} 2079235726080
+>>> print(d2,id(d2)) -----> {10: 'Apple', 20: 'Mango'} 2079235719872
+
+>>> d1 is d2 -----> False
+>>> d1 is not d2 -----> True
+
+set--------------------------------------------
+>>> s1={10,20,30,40}
+>>> s2={10,20,30,40}
+>>> print(s1,id(s1)) -----> {40, 10, 20, 30} 2079235201888
+>>> print(s2,id(s2)) -----> {40, 10, 20, 30} 2079235202112
+
+>>> s1 is s2 -----> False
+>>> s1 is not s2 -----> True
+
+frozenset-------------------------------------
+>>> fs1=frozenset({10,20,30,40})
+>>> fs2=frozenset({10,20,30,40})
+>>> print(fs1,id(fs1)) -----> frozenset({40, 10, 20, 30}) 2079235203456
+>>> print(fs2,id(fs2)) -----> frozenset({40, 10, 20, 30}) 2079235202560
+
+>>> fs1 is fs2 -----> False
+>>> fs1 is not fs2 -----> True
+
+list------------------------------------------
+>>> lst1=[10,'Python']
+>>> lst2=[10,'Python']
+>>> print(lst1,id(lst1)) -----> [10, 'Python'] 2079235811520
+>>> print(lst2,id(lst2)) -----> [10, 'Python'] 2079235801280
+
+>>> lst1 is lst2 -----> False
+>>> lst1 is not lst2 -----> True
+
+tuple-----------------------------------------
+>>> tp1=(10,'Python')
+>>> tp2=(10,'Python')
+>>> print(tp1,type(tp1)) -----> (10, 'Python') <class 'tuple'>
+>>> print(tp2,type(tp2)) -----> (10, 'Python') <class 'tuple'>
+
+>>> tp1 is tp2 -----> False
+>>> tp1 is not tp2 -----> True
+
+range-----------------------------------------
+>>> r1=range(10,20)
+>>> r2=range(10,20)
+>>> print(r1,type(r1)) -----> range(10, 20) <class 'range'>
+>>> print(r2,type(r2)) -----> range(10, 20) <class 'range'>
+
+>>> r1 is r2 -----> False
+>>> r1 is not r2 -----> True
+
+byte----------------------------------------
+>>> b1=bytes([10,20,30])
+>>> b2=bytes([10,20,30])
+>>> print(b1,type(b1)) -----> b'\n\x14\x1e' <class 'bytes'>
+>>> print(b1,id(b1)) -----> b'\n\x14\x1e' 2234600780688
+>>> print(b2,id(b2)) -----> b'\n\x14\x1e' 2234594882976
+
+>>> b1 is b2 -----> False
+>>> b1 is not  b2 -----> True
+
+bytearray-----------------------------------
+>>> ba1=bytearray([10,20,30])
+>>> ba2=bytearray([10,20,30])
+>>> print(ba1,id(ba1)) -----> bytearray(b'\n\x14\x1e') 2234607101232
+>>> print(ba2,id(ba2)) -----> bytearray(b'\n\x14\x1e') 2234607100592
+
+>>> ba1 is ba2 -----> False
+>>> ba1 is not ba2 -----> True
+
+Imp-str------------------------------------------
+>>> s1='PYTHON'
+>>> s2='PYTHON'
+>>> print(s1,id(s1)) -----> PYTHON 2234607065952 #Same memory address in case of same data/meaning,order,case
+>>> print(s2,id(s2)) -----> PYTHON 2234607065952
+
+>>> s1 is s2 -----> True
+>>> s1 is not s2 -----> False
+
+>>> s1='hyd'
+>>> s2='hyD'
+>>> print(s1,id(s1)) -----> hyd 2234607064848
+>>> print(s2,id(s2)) -----> yD 2234607064896
+
+>>> s1 is s2 -----> False
+>>> s1 is not s2 -----> True
+
+complex----------------------------------------
+>>> a=2+3j
+>>> b=2+3j
+>>> print(a,id(a)) -----> (2+3j) 2234605829360
+>>> print(b,id(b)) -----> (2+3j) 2234605829680
+
+>>> a is b -----> False
+>>> a is not b -----> True
+
+bool------------------------------------------
+>>> a=True
+>>> b=True
+>>> print(a,id(a)) -----> True 140708217932544 #True is keyword so it share the same memory address
+>>> print(b,id(b)) -----> True 140708217932544
+
+>>> a is b -----> True
+>>> a is not b -----> False
+
+float-----------------------------------------
+>>> a=1.2
+>>> b=1.2
+>>> print(a,id(a)) -----> 1.2 2234599514032
+>>> print(b,id(b)) -----> 1.2 2234605823312
+>>> a is b -----> False
+>>> a is not b -----> True
+
+int------------------------------------------
+>>> a=300
+>>> b=300
+>>> print(a,id(a)) -----> 300 2234605815728
+>>> print(b,id(b)) -----> 300 2234605816208
+
+>>> a is b -----> False
+>>> a is not b -----> True
+
+#Data stored int the range of (0-256) will always return True because it stores the data in register
+>>> a=256
+>>> b=256
+>>> print(a,id(a)) -----> 256 140708218836056
+>>> print(b,id(b)) -----> 256 140708218836056
+
+>>> a is b -----> True
+>>> a is not b -----> False
+#data stroed in the range of (-1 to -6) will return True because
+>>> a=-6
+>>> b=-6
+>>> a is b -----> False
+>>> a=-5
+>>> b=-5
+>>> a is b -----> True
+
+>>> a=257
+>>> b=257
+
+>>> print(b,id(b)) -----> 257 2234605815728
+>>> print(b,id(a)) -----> 257 2234605826256
+>>> a is b -----> False
+>>> a is not b -----> True
+
+Special Point---------------------------------------------
+#Value assigned to the variable using multi line assignment it wiil point to same memory address
+#Fundamental Data Type with same data values in multipleobject with multi line assignment contains same memory address
+>>> a,b=300,300
+>>> print(a,id(a)) -----> 300 2234605815696
+>>> print(b,id(b)) -----> 300 2234605815696
+>>> a is b -----> True
+>>> a is not b -----> False
+
+>>> lst1,lst2=[10,20,30,],[10,20,30]
+>>> print(lst1,id(lst1)) -----> [10, 20, 30] 2234606926656
+>>> print(lst2,id(lst2)) -----> [10, 20, 30] 2234607217920
+
+Note:#All other than Fundamental Data Type with same data values in multipleobject with multi line assignment contains different memory address
+>>> lst1 is lst2 -----> False
+>>> lst1 is not lst2 -----> True
+================================================================================X======================================================================================

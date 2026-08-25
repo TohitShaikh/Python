@@ -1,0 +1,91 @@
+-----------------------------------------------------------------------Operator & Expression---------------------------------------------------------------------------
+-------------------------------------------------------------------------Logical Operator------------------------------------------------------------------------------
+'and' operator----------------------------------------------------------
+-------------------
+Example-1
+-------------------
+>>> True and False ------> False
+>>> False and True ------> False
+>>> True and True ------> True
+>>> False and False ------> False
+
+-------------------
+Example-2
+-------------------
+>>> 10>2 and 20>4 ------> True #Full Length evaluation
+>>> 100>200 and 200>100 ------> False #Short circuit Evaluation
+>>> 20>30 and 30>10 and 40>20 ------> False #Short circuit Evaluation 
+>>> 100>20 and 20>30 and 30>10 ------> False #Short circuit Evaluation
+
+10>2 and 3>2 and 2>1 and 10>6 -----> True #Full Length evaluation
+
+'or' operator----------------------------------------------------------
+-------------------
+Example-1
+-------------------
+>>> True or False ------> True
+>>> False or True ------> True
+>>> True or True ------> True
+>>> False or False ------> False
+
+-------------------
+Example-2
+-------------------
+>>> 10>2 or 30>40 ------> True #Short circuit Evaluation
+>>> 100>200 or 40>50 or 20>30 ------> False #Full Length evaluation
+>>> 200>300 or 30>20 or 40>50 or 50>100 ------> True #Short circuit Evaluation
+>>> 10>2 or 5>6 or -5>-6 ------> True #Short circuit Evaluation
+
+'not' operator----------------------------------------------------------
+-------------------
+Example-1
+-------------------
+>>> not True ------> False
+>>> not False ------> rue
+
+-------------------
+Example-2
+-------------------
+>>> not 10 ------> False
+>>> not 0 ------> True
+>>> not not ------> SyntaxError: invalid syntax
+>>> not 10-10 ------> True
+>>> not'PYTHON' ------> False
+>>> not '' ------> True
+>>> not str(10-10) ------> False
+>>> not'False' ------> False
+
+Special Point(and)----------------------------------------
+>>> 100 and 200 ------> 200
+>>> 120 and -123 ------> -123
+>>> 0 and 120 ------> 0
+>>> 120 and 234 and 450 ------> 450
+>>> 120 and 10-10 and 40 ------> 0
+>>> True and 300 ------> 300
+>>> False and False and 300 ------> False
+>>> 'Python' and 'Java' and 'DataSci' ------> 'DataSci'
+
+Special Point(or)---------------------------------------
+>>> 100 or 200 ------> 100
+>>> 0 or 100 ------> 100
+>>> 0 or 20 or 0 ------> 20
+>>> False or True or 20 ------> True
+>>> 'Python' or 'Java' or '' ------> 'Python'
+>>> '' or 'Python' or '' ------> 'Python'
+
+Special Point(and & or)-----------------------------------
+>and will have more priority than or first it will evaluate and then or
+
+>>> 10 and 20 or 30 ------> 20
+>>> 20 or 30 and 40 ------> 20
+>>> 10 and 20 or 30 and 40 or 50 ------> 20
+>>> 'Easy' or 'complex' and 'Very Complex' or 'Python' and 'java' ------> 'Easy'
+
+Special Point(and & or & not)-----------------------------------------------------------
+>>> not 'Easy' or 'complex' and 'Very Complex' or 'Python' and 'java' ------> 'Very Complex'
+
+>>> 100 and 200 or not 'Python' or not 'java' and 'not' ------> 200
+
+>>> not ('good' and 'better' or 'best' or 'poor' and 'amazing') ------> False
+
+>>> not ('good' and 'better' or 'best' or 'poor' and 'amazing') and 'False' ------> False

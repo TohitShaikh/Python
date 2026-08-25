@@ -1,0 +1,184 @@
+---------------------------------------------------------Displaying the result of Python Program-----------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
+Syntax-5 print(Messages cum Values with format specifiers) OR print(Values cum Messages with format specifiers)
+----------------------------------------------------------------------------------------------------------------
+Uses symbols to denote the type of data being printed.
+	%d: Integer data 
+	%f: Float (decimal) data 
+	%s: String data 
+
+>>> a=10
+>>> print(a) -----> 
+10
+>>> print('Value of a is %d' %a) -----> Value of a is 10
+>>> toh=23
+>>> print('Value of a is %d' %toh) -----> Value of a is 23
+
+>>> a=2.3
+>>> print('Value of a is %f' %a) -----> Value of a is 2.300000
+>>> print('Value of a is %0.2f' %a) -----> Value of a is 2.30
+>>> print('Value of a is %0.1f' %a) -----> Value of a is 2.3
+>>> print('Value of a is %0.0f' %a) -----> Value of a is 2
+>>> print('Value of a is %0.39f' %a) -----> Value of a is 2.299999999999999822364316059974953532219
+>>> print('Value of a is %0.21f' %a) -----> Value of a is 2.299999999999999822364
+
+>>> sno=10
+>>> sname='Tohit'
+>>> marks=40.97
+>>> # My Number is 10 and my name is Tohit  and marks is 40.79
+>>> print('My number is %d and my name is %s and my marks is %0.2f' %(sno,sname,marks))
+         -----> My number is 10 and my name is Tohit and my marks is 40.97
+
+>>> a=10
+>>> b=2.3
+>>> c=a+b
+>>> #Sum (10,2.3) is 12.3
+>>> print('Sum (%d,%0.1f) is %0.1f' %(a,b,c)) -----> Sum (10,2.3) is 12.3
+
+
+>>> lst=[10,'rs',23.45]
+>>> print('Content of lst{}'.format(lst)) -----> Content of lst[10, 'rs', 23.45]
+>>> print('Content of lst{}',lst) -----> Content of lst{} [10, 'rs', 23.45]
+>>> print('Content of lst%d' %lst) -----> TypeError: %d format: a real number is required, not list
+>>> print('Content of lst%s' %str(lst)) -----> Content of lst[10, 'rs', 23.45]
+
+>>> d1={10:'Python',20:'Java',30:'C'}
+>>> print('content of d1 is {}'.format(d1)) -----> content of d1 is {10: 'Python', 20: 'Java', 30: 'C'}
+>>> print('content of d1 is %s'%str(d1)) -----> content of d1 is {10: 'Python', 20: 'Java', 30: 'C'}
+
+----------------------------------------------------------------------------------------------------------------
+Syntax-6 print(value,end="Delimeter") # Printing the data in horizontal format
+----------------------------------------------------------------------------------------------------------------
+
+>>> r=range(10,16)
+>>> for val in r:
+...     print(val)
+...
+10
+11
+12
+13
+14
+15
+
+>>> for val in range(10,16):
+...     print(val)
+...
+10
+11
+12
+13
+14
+
+
+>>> for val in range(10,16):
+...     print(val,end=" ")
+...
+ 10 12 13 14 15 16
+>>> for val in range(10,16):
+...     print(val,end="--->")
+...
+>>> 11--->12--->13--->14--->15--->16
+-----------------------------------------------------------Displaying The result of form input()-----------------------------------------------------------------------
+--------------------
+Example-1
+--------------------
+#DataRead1.py
+print('Enter a Value')
+a=input()
+print(a,type(a))
+	 --------->Enter a Value
+			1
+		1 <class 'str'>
+
+--------------------
+Example-2
+--------------------
+#DataRead2.py
+a=input('Enter Value:')
+print(a,type(a))
+	  ---->Enter Value:12
+		12 <class 'str'>
+
+--------------------
+Example-3
+--------------------
+#Program for Multiplying Two Numerical Values
+#DataRead3.py
+a=input('Enter First Value:')
+b=input('Enter Second Value:')
+#Here a,b are of type str so we need to convert it into float type.
+x=float(a)
+y=float(b)
+#Multiply
+z=x*y
+print('Multiplication({},{}) is {}'.format(x,y,z))
+				-------->Enter First Value:112.4
+					  Enter Second Value:3.3
+					  Multiplication(112.4,3.3) is 370.92
+--------------------
+Example-4
+--------------------
+#Program for Multiplying Two Numerical Values
+#DataRead4.py
+x=float(input('Enter First Value:'))
+y=float(input('Enter Second Value:'))
+#Multiply
+z=x*y
+print('Multiplication({},{}) is {}'.format(x,y,z))
+   				--------->Enter First Value:12
+					   Enter Second Value:1
+					   Multiplication(12.0,1.0) is 12.0
+
+--------------------
+Example-5
+--------------------
+#Program for Multiplying Two Numerical Values
+#DataRead5.py
+x=float(input('Enter First Value:'))
+y=float(input('Enter Second Value:'))
+print('Multiplication({},{}) is {}'.format(x,y,x*y))
+					------>Enter First Value:4.9
+						Enter Second Value:5.6
+						Multiplication(4.9,5.6) is 27.44
+
+--------------------
+Example-6
+--------------------
+#Program for Multiplying Two Numerical Values
+#DataRead6.
+print('Enter Two Values')
+x=float(input())
+y=float(input())
+print('Multiplication ({},{}) is {}'.format(x,y,x*y))
+print('----------------------------------------------------------------------')
+print('Multiplication (%0.2f,%0.2f) is %0.2f '%(x,y,x*y))
+print('----------------------------------------------------------------------')
+print('Multiplication (%0.2f,%0.2f) is %0.2f '%(x,y,round(x*y,2)))
+									
+------->Enter Two Values
+	2
+	1
+	Multiplication (2.0,1.0) is 2.0
+	----------------------------------------------------------------------
+	Multiplication (2.00,1.00) is 2.00 
+	----------------------------------------------------------------------
+	Multiplication (2.00,1.00) is 2.00 
+
+--------------------
+Example-7
+--------------------
+#Program for Multiplying Two Numerical Values
+#DataRead7.py
+print('{}'.format(float(input('Enter First Value:'))*float(input('Enter Second Value:'))))
+print('-----------------------------------OR---------------------------------------')
+print('%0.2f' %(float(input('Enter First Value:'))*float(input('Enter Second Value:'))))
+
+	Enter First Value:3.89
+	Enter Second Value:4.567
+	17.76563
+	-----------------------------------OR---------------------------------------
+	Enter First Value:3.89
+	Enter Second Value:4.567
+	17.77
+=========================================================================================X=============================================================================

@@ -1,0 +1,215 @@
+-----------------------------------------------------------------------Operator & Expression---------------------------------------------------------------------------
+------------------------------------------------------------------------Assignment Operator----------------------------------------------------------------------------
+Single Line Assignment----------------------------------
+>>> a=10
+>>> b=20
+>>> c=a+b
+>>> print(c,type(c)) ------> 30 <class 'int'>
+
+>>> sno=10
+>>> sname='Tohit'
+>>> marks=34.57
+>>> print(sno,sname,marks) ------> 10 Tohit 34.57
+
+Multi Line Assignment----------------------------------
+>>> a,b,c=10,20,30
+>>> print(a,b,c) -----> 10 20 30
+
+>>> age,name,sal=22,'Tohit',100.7
+>>> print(age,name,sal) -----> 22 Tohit 100.7
+
+>>> a,b=10,3
+>>> c,d,e,f=a+b,a-b,a*b,a/b
+>>> print(c) -----> 13
+>>> print(d) -----> 7
+>>> print(e) -----> 30
+>>> print(f) -----> 3.3333333333333335
+
+Swapping Logic2----------------------------------------
+>>> a,b=10,30
+>>> print(a,b) -----> 10 30
+
+>>> a,b=b,a #Swaps Values Directly
+>>> print(a,b) -----> 30 10
+
+>>> a=100
+>>> b=2000
+>>> print(a,b) -----> 100 2000
+>>> a,b=b,a
+>>> print(a,b) -----> 
+2000 100
+
+--------------------------------------------------------
+Example-1
+--------------------------------------------------------
+#Program For Swapping Two Values
+#AssignmentOperatorEx1.py
+a,b=input('Enter the Value of a: '),input('Enter the Value of b: ')
+
+#Displaying the Original Result
+print('*'*50)
+print('Original Value of a is {}'.format(a))
+print('Original Value of b is {}'.format(b))
+print('*'*50)
+
+#Swapping Logic -2
+a,b=b,a #Multi Line Assignment
+
+#Displaing Swapped Result
+print('*'*50)
+print('Swapped Value of a is {}'.format(a))
+print('Swapped Value of b is {}'.format(b))
+print('*'*50)
+
+ ----->	Enter the Value of a: 22
+	Enter the Value of b: Tohit
+	**************************************************
+	Original Value of a is 22
+	Original Value of b is Tohit
+	**************************************************
+	**************************************************
+	Swapped Value of a is Tohit
+	Swapped Value of b is 22
+	**************************************************
+
+--------------------------------------------------------
+Example-2
+--------------------------------------------------------
+#Program For Swapping Two Values
+#AssignmentOperatorEx1.py
+a,b=input('Enter the Value of a: '),input('Enter the Value of b: ')
+
+#Displaying the Original Result
+print('*'*50)
+print('Original Value of a is {}'.format(a))
+print('Original Value of b is {}'.format(b))
+print('*'*50)
+
+#Swapping Logic -1
+k=a #Single Line Assignment
+a=b
+b=k
+
+#Displaing Swapped Result
+print('*'*50)
+print('Swapped Value of a is {}'.format(a))
+print('Swapped Value of b is {}'.format(b))
+print('*'*50)
+
+ ----->	Enter the Value of a: 23
+	Enter the Value of b: 45
+	**************************************************
+	Original Value of a is 23
+	Original Value of b is 45
+	**************************************************
+	**************************************************
+	Swapped Value of a is 45
+	Swapped Value of b is 23
+	**************************************************
+--------------------------------------------------------
+Example-3
+--------------------------------------------------------
+#program for swapping two integer Values
+#AssignmentOperatorEx3.py
+a,b=int(input('Enter The Value of a: ')),int(input('Enter the Value of b: '))
+
+#Displaying the Original Result
+print('*'*50)
+print('Original Value of a is {}'.format(a))
+print('Original Value of b is {}'.format(b))
+print('*'*50)
+
+#Swapping Logic -3
+a=a*b #it is applicable for only Integer Data
+b=a//b
+a=a//b
+
+#Displaing Swapped Result
+print('*'*50)
+print('Swapped Value of a is {}'.format(a))
+print('Swapped Value of b is {}'.format(b))
+print('*'*50)
+
+ ----->	Enter The Value of a: 12
+	Enter the Value of b: 98
+	**************************************************
+	Original Value of a is 12
+	Original Value of b is 98
+	**************************************************
+	**************************************************
+	Swapped Value of a is 98
+	Swapped Value of b is 12
+	**************************************************
+--------------------------------------------------------
+Example-4
+--------------------------------------------------------
+#program for swapping two integer Values
+#AssignmentOperatorEx4.py
+a,b=int(input('Enter The Value of a: ')),int(input('Enter the Value of b: '))
+
+#Displaying the Original Result
+print('*'*50)
+print('Original Value of a is {}'.format(a))
+print('Original Value of b is {}'.format(b))
+print('*'*50)
+
+#Swapping Logic -4
+a=a+b
+b=a-b
+a=a-b
+
+#Displaying Swapped Result
+print('*'*50)
+print('Swapped Value of a is {}'.format(a))
+print('Swapped Value of b is {}'.format(b))
+print('*'*50)
+
+ ----->	Enter The Value of a: 246
+	Enter the Value of b: 4353
+	**************************************************
+	Original Value of a is 246
+	Original Value of b is 4353
+	**************************************************
+	**************************************************
+	Swapped Value of a is 4353
+	Swapped Value of b is 246
+	**************************************************
+---------------------------------------------------------------------Relational Operator-------------------------------------------------------------------------------
+--------------------------------------------------------
+Example-1
+--------------------------------------------------------
+#Program for demonstrating rrelational operator
+#RelationalOperatorEx1.py
+a=int(input('Enter the value of a: '))
+b=int(input('Enter The Value of b: '))
+#Displaying the value
+print('='*50)
+print('\t Result of relational operator')
+print('='*50)
+print('\t\t {} > {} is {}'.format(a,b,a>b))
+print('\t\t {} < {} is {}'.format(a,b,a<b))
+print('\t\t {} == {} is {}'.format(a,b,a==b))
+print('\t\t {} != {} is {}'.format(a,b,a!=b))
+print('\t\t {} >= {} is {}'.format(a,b,a>=b))
+print('\t\t {} <= {} is {}'.format(a,b,a<=b))
+print('*'*50)
+
+	Enter the value of a: -4
+	Enter The Value of b: 5
+	==================================================
+	 Result of relational operator
+	==================================================
+		 -4 > 5 is False
+		 -4 < 5 is True
+		 -4 == 5 is False
+		 -4 != 5 is True
+		 -4 >= 5 is False
+		 -4 <= 5 is True
+	**************************************************
+
+Special Point------------------------------
+>>> x=10>2
+>>> print(x,type(x)) -----> True <class 'bool'>
+>>> x=float(10>2)
+>>> print(x,type(x)) -----> 1.0 <class 'float'>
+===================================================================================X===================================================================================

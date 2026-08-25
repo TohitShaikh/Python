@@ -1,0 +1,270 @@
+---------------------------------------------------------------------list Category Data Type(list)------------------------------------------------------------------
+--------------------------------------------------------------------Operation on List Object---------------------------------------------------------------------------
+-------------------------------------------------------------
+Pre-Defined Function In list
+--------------------------------------------------------------
+---------------------------------------------------
+3] remove()
+---------------------------------------------------
+>>> lst=[10,'RS',45.67,'PYTHON',3+2j]
+>>> print(lst,type(lst),id(lst)) ------>[10, 'RS', 45.67, 'PYTHON', (3+2j)] <class 'list'> 2803881251136
+>>>
+>>> lst.remove('PYTHON')
+>>> print(lst,type(lst),id(lst)) ------>[10, 'RS', 45.67, (3+2j)] <class 'list'> 2803881251136
+>>> lst.remove(45.67)
+>>> print(lst,type(lst),id(lst)) ------>[10, 'RS', (3+2j)] <class 'list'> 2803881251136
+>>> lst.remove('RS')
+>>> print(lst,type(lst),id(lst)) ------>[10, (3+2j)] <class 'list'> 2803881251136
+>>> lst.remove ------>ValueError: list.remove(x): x not in list
+
+Special Point------------------------------------------------
+>>> [].remove(100) ------>ValueError: list.remove(x): x not in list
+>>> list().remove(1230) ------>ValueError: list.remove(x): x not in list
+
+>>> lst=[10,20,10,30,10,40,50]
+>>> print(lst,type(lst),id(lst)) ------>[10, 20, 10, 30, 10, 40, 50] <class 'list'> 2803881256064
+>>> lst.remove(10)
+>>> print(lst,type(lst),id(lst)) ------>[20, 10, 30, 10, 40, 50] <class 'list'> 2803881256064
+>>> lst.remove(10)
+>>> print(lst,type(lst),id(lst)) ------>[20, 30, 10, 40, 50] <class 'list'> 2803881256064
+>>> lst.remove(10)
+>>> print(lst,type(lst),id(lst)) ------>[20, 30, 40, 50] <class 'list'> 2803881256064
+
+---------------------------------------------------
+4] pop(index)
+---------------------------------------------------
+>>> lst=[10,20,10,30,10,40,50]
+>>> print(lst,type(lst),id(lst)) ------>[10, 20, 10, 30, 10, 40, 50] <class 'list'> 2803881256704
+>>> lst.pop(4) ------>10
+>>> print(lst,type(lst),id(lst)) ------>[10, 20, 10, 30, 40, 50] <class 'list'> 2803881256704
+>>> lst.pop(-4) ------>10
+>>> print(lst,type(lst),id(lst)) ------>[10, 20, 30, 40, 50] <class 'list'> 2803881256704
+>>> lst.pop(14) ------>IndexError: pop index out of range
+
+Special Point----------------------------------------------
+>>> [].pop(0) ------>IndexError: pop from empty list
+>>> list().pop[10] ------>TypeError: 'builtin_function_or_method' object is not subscriptable
+
+---------------------------------------------------
+5] pop()
+---------------------------------------------------
+
+>>> lst=[10, 'RS', 45.67, 'PYTHON', (3+2j)]
+>>> print(lst,type(lst),id(lst)) ------>[10, 'RS', 45.67, 'PYTHON', (3+2j)] <class 'list'> 2803881258304
+>>> lst.pop() ------>(3+2j)
+>>> print(lst,type(lst),id(lst)) ------>[10, 'RS', 45.67, 'PYTHON'] <class 'list'> 2803881258304
+>>> lst.pop() ------>'PYTHON'
+>>> print(lst,type(lst),id(lst)) ------>[10, 'RS', 45.67] <class 'list'> 2803881258304 
+
+Special Point---------------------------------------------
+>>> [].pop() ------>IndexError: pop from empty list
+>>> list().pop() ------>IndexError: pop from empty list
+
+
+---------------------------------------------------
+6] clear()
+---------------------------------------------------
+>>> lst=[10,'rs',45.67,'PYTHON',2+3j]
+>>> print(lst,type(lst),id(lst)) ------>[10, 'rs', 45.67, 'PYTHON', (2+3j)] <class 'list'> 2803881318464
+>>> len(lst) ------>5
+>>> lst.clear()
+>>> print(lst,type(lst),id(lst)) ------>[] <class 'list'> 2803881318464
+>>> len(lst) ------>0
+
+>>> [].clear() ------>No Result/Space
+>>> print([].clear()) ------>None
+
+---------------------------------------------------
+7] index()
+---------------------------------------------------
+>>> lst=[10,'RS',45.67,'PYTHON',2+3j,True,'HYD',23.45]
+>>> print(lst,type(lst),id(lst)) ------>[10, 'RS', 45.67, 'PYTHON', (2+3j), True, 'HYD', 23.45] <class 'list'> 2803881373376
+>>> lst.index('PYTHON') ------>3
+>>> lst.index(23.45) ------>7
+>>> lst.index('BANG') ------>ValueError: list.index(x): x not in list
+
+Special Point---------------------------------------
+>>> lst=[10,20,30,40,10,20,30,40,50]
+>>> print(lst,type(lst),id(lst)) ------>[10, 20, 30, 40, 10, 20, 30, 40, 50] <class 'list'> 2803881373312
+>>> lst.index(10) ------>0
+>>> lst.index(20) ------>1
+>>> lst.index(100) -----> NameError: name 'lst' is not defined. Did you mean: 'list'?
+
+---------------------------------------------------
+8] count()
+---------------------------------------------------
+>>> lst=[10,20,30,40,10,20,30,40,50]
+>>> print(lst,type(lst),id(lst)) -----> [10, 20, 30, 40, 10, 20, 30, 40, 50] <class 'list'> 1728225391040
+>>> lst.count(10) -----> 2
+>>> lst.count(20) -----> 2
+>>> lst.count(40) -----> 2
+>>> lst.count(400) -----> 0
+>>> lst.count('Python') -----> 0
+>>> [].count(10) -----> 0
+>>> list().count(10) -----> 0
+
+
+------------------------------------------------------
+>>> s='MISSISSIPPI'
+>>> lst=list(s)
+>>> print(lst,type(lst),id(lst)) -----> ['M', 'I', 'S', 'S', 'I', 'S', 'S', 'I', 'P', 'P', 'I'] <class 'list'> 1728225293312
+>>> lst.count('I') -----> 4
+>>> lst.count('s') -----> 0
+>>> lst.count('S') -----> 4
+>>> lst.count('P') -----> 2
+>>> lst.count('K') -----> 0
+
+---------------------------------------------------
+9] extend()
+---------------------------------------------------
+>>> lst1=[10,20,30,40]
+>>> lst2=['RS','TR','DR']
+>>> print(lst1,type(lst1),id(lst1)) -----> [10, 20, 30, 40] <class 'list'> 1728225505728
+>>> print(lst2,type(lst2),id(lst2)) -----> ['RS', 'TR', 'DR'] <class 'list'> 1728225498368
+>>> lst1.extend(lst2)
+>>> print(lst1,type(lst1),id(lst1)) -----> [10, 20, 30, 40, 'RS', 'TR', 'DR'] <class 'list'> 1728225505728
+>>> print(lst2,type(lst2),id(lst2)) -----> ['RS', 'TR', 'DR'] <class 'list'> 1728225498368
+
+>>> lst1=[10,20,30,40]
+>>> lst2=['RS','TR','DR']
+>>> lst2.extend(lst1)
+>>> print(lst2,type(lst2),id(lst2)) -----> ['RS', 'TR', 'DR', 10, 20, 30, 40] <class 'list'> 1728225497920
+------------------------------OR-----------------------------------
+
+>>> lst1=[10,20,30]
+>>> lst2=['rs','tr','dr']
+>>> lst3=[1.2,2.3]
+>>> lst1.extend(lst2,lst3) -----> TypeError: list.extend() takes exactly one argument (2 given)
+#TO Avoid The Above errow
+>>> lst1.extend(lst2)
+>>> lst1.extend(lst3)
+>>> print(lst1) -----> [10, 20, 30, 'rs', 'tr', 'dr', 1.2, 2.3]
+
+--------------------------------------------------------------
+>>> lst1=[10,20,30]
+>>> lst2=['rs','tr','dr']
+>>> lst3=[1.2,2.3]
+>>>
+>>> lst1=lst1+lst2+lst3 #Most Important
+>>> print(lst1) -----> [10, 20, 30, 'rs', 'tr', 'dr', 1.2, 2.3]
+
+Additional-------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------
+Del Operator
+---------------------------------------------------
+Mutable Object-------------------------------------
+>>> lst=[10,'RS',45.67,'PYTHON',2+3j,True,'HYD',23.45]
+>>> print(lst,type(lst),id(lst)) ------>[10, 'RS', 45.67, 'PYTHON', (2+3j), True, 'HYD', 23.45] <class 'list'> 2803881260352
+>>> del lst[3:6]
+>>> print(lst,type(lst),id(lst)) ------>[10, 'RS', 45.67, 'HYD', 23.45] <class 'list'> 2803881260352
+>>> lst=[10,'RS',45.67,'PYTHON',2+3j,True,'HYD',23.45]
+>>> del lst[1::2]
+>>> print(lst,type(lst),id(lst)) ------>[10, 45.67, (2+3j), 'HYD'] <class 'list'> 2803881163968
+>>> lst=[10,'RS',45.67,'PYTHON',2+3j,True,'HYD',23.45]
+>>> del lst[::2]
+>>> print(lst,type(lst),id(lst)) ------>['RS', 'PYTHON', True, 23.45] <class 'list'> 2803881162304
+>>> lst=[10,'RS',45.67,'PYTHON',2+3j,True,'HYD',23.45]
+>>> print(lst,type(lst),id(lst)) ------>[10, 'RS', 45.67, 'PYTHON', (2+3j), True, 'HYD', 23.45] <class 'list'> 2803881260352
+>>> del lst
+>>> print(lst,type(lst),id(lst)) ------>NameError: name 'lst' is not defined. Did you mean: 'list'?
+
+Immutable Object------------------------------------------------
+>>> s='PYTHON'
+>>> print(s,type(s)) ------>PYTHON <class 'str'>
+>>> s[0]=1 ------>TypeError: 'str' object does not support item assignment
+>>> del s[1] ------>TypeError: 'str' object doesn't support item deletion
+>>> del s[::2] ------>TypeError: 'str' object does not support item deletion
+>>> del s
+>>> print(s) ------> NameError: name 's' is not defined
+
+---------------------------------------------------
+enumerate Function
+---------------------------------------------------
+>>> lst=[10,20,30,40,10,20,30,40,50]
+>>> enumerate(lst) ------> <enumerate object at 0x000001926240FD30>
+>>> lst=[10,20,30,10,30,20,40,10,20]
+>>> print(lst,type(lst),id(lst)) ------> [10, 20, 30, 10, 30, 20, 40, 10, 20] <class 'list'> 1728225379904
+
+>>> for i,v in enumerate(lst):
+...     print(i,'----->',v)
+...
+0 -----> 10
+1 -----> 20
+2 -----> 30
+3 -----> 10
+4 -----> 30
+5 -----> 20
+6 -----> 40
+7 -----> 10
+8 -----> 20
+
+
+>>> for i,v in enumerate(lst):
+...     if(v==10):
+...         print(i,'----->',v)
+...
+0 -----> 10
+3 -----> 10
+7 -----> 10
+
+>>> for i,v in enumerate(lst):
+...     if(v==20):
+...         print(i,'----->',v)
+...
+1 -----> 20
+5 -----> 20
+8 -----> 20
+------------------------------------------------------
+>>> s='MISSISSIPPI'
+>>> for i,v in enumerate(lst):
+...     print(i,'----->',v)
+...
+0 -----> 10
+1 -----> 20
+2 -----> 30
+3 -----> 10
+4 -----> 30
+5 -----> 20
+6 -----> 40
+7 -----> 10
+8 -----> 20
+>>> for i,v in enumerate(s):
+...     print(i,'----->',v)
+...
+0 -----> M
+1 -----> I
+2 -----> S
+3 -----> S
+4 -----> I
+5 -----> S
+6 -----> S
+7 -----> I
+8 -----> P
+9 -----> P
+10 -----> I
+>>> for i,v in enumerate(s):
+...     if(v=='S'):
+...         print(i,'----->',v)
+...
+2 -----> S
+3 -----> S
+5 -----> S
+6 -----> S
+>>> for i,v in enumerate(s):
+...     if(v=='I'):
+...         print(i,'----->',v)
+...
+1 -----> I
+4 -----> I
+7 -----> I
+10 -----> I
+>>> for i,v in enumerate(s):
+...     if(v=='P'):
+...         print(i,'----->',v)
+...
+8 -----> P
+9 -----> P
+
+>>> a=10
+>>> for index,val in enumerate(a):
+...     print(index,'----->',val) ------> TypeError: 'int' object is not iterable

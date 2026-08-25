@@ -1,0 +1,149 @@
+-----------------------------------------------------------Displaying The result of form input()-----------------------------------------------------------------------
+--------------------
+Example-1
+--------------------
+#Program for calculating area and perimeter of rectangle
+#Accepting the value
+length=float(input('Enter Length:'))
+breadth=float(input('Enter Breadth:'))
+#Calculating the area and perimeter of rectangle
+area_rect=length*breadth
+peri_rect=2*(length+breadth)
+#Displaying the result
+print('-'*50)
+print('length{}'.format(length))
+print('breadth{}'.format(breadth))
+print('Area of rect = {}'.format(area_rect))
+print('Perimeter of area is {}'.format(peri_rect))
+print('*'*50)
+
+ ------>Enter Length:10
+	Enter Breadth:5
+	--------------------------------------------------
+	length10.0
+	breadth5.0
+	Area of rect = 50.0
+	Perimeter of area is 30.0
+ 	**************************************************
+
+--------------------
+Example-2
+--------------------
+#Program for calculating area and perimeter of the circle
+#Circle.py
+radius=float(input('Enter Radius:'))
+area_circle=3.14*radius*radius
+perimeter_circle=2*3.14*radius
+print('*'*50)
+print('Radius {}'.format(radius))
+print('Area of circle = %0.2f'%area_circle)
+print('perimeter of circle is {}'.format(perimeter_circle))
+print('*'*50)
+
+----->	Enter Radius:2
+	**************************************************
+	Radius 2.0
+	Area of circle = 12.56
+	perimeter of circle is 12.56
+	**************************************************
+
+--------------------
+Example-3
+--------------------
+#Program for calculation of Simple Interest and Total Amount ot pay
+#simpleinterest.py
+principle=float(input('Enter the principle amount: '))
+time=float(input('Enter the time:'))
+rate_of_interest=float(input('Enter the rate of interest:'))
+#Calculation of Simple Amount and Total amount to pay
+simple_interest=(principle*time*rate_of_interest)/100
+total_amount=principle+simple_interest
+print('*'*50)
+print('\t\tResult of simple interest')
+print('*'*50)
+print('\t\tPrinciple Amount is {}'.format(principle))
+print('\t\tTime is {}' .format(time))
+print('\t\tRate of Interest is {}' .format(rate_of_interest))
+print('\t\tSimple interest is {}'.format(simple_interest))
+print('\t\tTotal amount to pay {}'.format(total_amount))
+print('*'*50)
+
+----->	Enter the principle amount: 1000
+	Enter the time:2
+	Enter the rate of interest:19
+	**************************************************
+		Result of simple interest
+	**************************************************
+		Principle Amount is 1000.0
+		Time is 2.0
+		Rate of Interest is 19.0
+		Simple interest is 380.0
+		Total amount to pay 1380.0
+	**************************************************
+
+--------------------
+Example-4
+--------------------
+#Program for Swapping two Values
+#SwapLogic.py
+a=input('Enter the Value of a:')
+b=input('Enter the Value of b:')
+print('*'*50)
+print('Original Value of a {}'.format(a))
+print('Original Value of b {}'.format(b))
+print('-'*50)
+#Swapping Logic
+k=a #Here k is temporary Variable
+a=b
+b=k
+print('Swapped Value of a is {}'.format(a))
+print('Swapped Value of b is {}'.format(b))
+print('*'*50)
+
+	Enter the Value of a:10
+	Enter the Value of b:python
+	**************************************************
+	Original Value of a 10
+	Original Value of b python
+	--------------------------------------------------
+	Swapped Value of a is python
+	Swapped Value of b is 10
+	**************************************************
+--------------------
+Example-5
+--------------------
+#Program for calculating area and perimeter of square
+#Square.py
+side=float(input('Enter the side of square:'))
+#Calculating the Area and Perimeter of the sqaure
+area_square= side ** 2
+perimeter_square=4*side
+#Printing the result
+print('*'*50)
+print('Area of Square is {}'.format(area_square))
+print('Perimeter of sqaure is {}'.format(perimeter_square))
+print('*'*50)
+
+----->	Enter the side of square:4
+	**************************************************
+	Area of Square is 16.0
+	Perimeter of sqaure is 16.0
+	**************************************************
+
+--------------------
+Example-6
+--------------------
+
+
+----------------------------------------------------------------------------NoneType---------------------------------------------------------------------------------
+--------------------
+Example
+--------------------
+>>> a=None
+>>> print(a,type(a),id(a)) ------> None <class 'NoneType'> 140707092810560
+>>> None==0 ------> False
+>>> None=="" ------> False
+>>> None==False ------> False
+>>> None==None ------> True
+>>> n=NoneType() ------> NameError: name 'NoneType' is not defined
+=================================================================================X====================================================================================

@@ -1,0 +1,200 @@
+---------------------------------------------------------------------list Category Data Type(list)------------------------------------------------------------------
+-------------------------------------------------------------
+Copy Technique In Python
+--------------------------------------------------------------	
+1]Shallow Copy
+--------------------------------------------------------------
+>>> lst1=[10,'RS']
+>>> lst2=lst1.copy() #Shallow Copy
+
+>>> print(lst1,id(lst1)) --------> [10, 'RS'] 1999779421760
+>>> print(lst2,id(lst2)) --------> [10, 'RS'] 1999779421248
+
+>>> lst1.append('Python')
+>>> lst2.insert(1,'RS')
+
+>>> print(lst1,id(lst1)) --------> [10, 'RS', 'Python'] 1999779421760
+>>> print(lst2,id(lst2)) --------> [10, 'RS', 'RS'] 1999779421248
+
+--------------------------------------------------------------	
+2]Deep Copy
+--------------------------------------------------------------
+>>> lst1=[10,'PYTHON']
+>>> lst2=lst1 #Deep Copy 
+
+>>> print(lst1,id(lst1)) --------> [10, 'PYTHON'] 1999779301056
+>>> print(lst2,id(lst2)) --------> [10, 'PYTHON'] 1999779301056
+
+>>> lst1.append(100)
+
+>>> print(lst1,id(lst1)) --------> [10, 'PYTHON', 100] 1999779301056
+>>> print(lst2,id(lst2)) --------> [10, 'PYTHON', 100] 1999779301056
+
+>>> lst2.insert(1,'RS')
+
+>>> print(lst2,id(lst2)) --------> [10, 'RS', 'PYTHON', 100] 1999779301056
+>>> print(lst1,id(lst1)) --------> [10, 'RS', 'PYTHON', 100] 1999779301056
+
+---------------------------------------------------
+10] copy()
+---------------------------------------------------
+>>> lst1=[10,'RS']
+>>> lst2=lst1.copy() #Shallow Copy
+
+>>> print(lst1,id(lst1)) --------> [10, 'RS'] 1999779421760
+>>> print(lst2,id(lst2)) --------> [10, 'RS'] 1999779421248
+
+>>> lst1.append('Python')
+>>> lst2.insert(1,'RS')
+
+>>> print(lst1,id(lst1)) --------> [10, 'RS', 'Python'] 1999779421760
+>>> print(lst2,id(lst2)) --------> [10, 'RS', 'RS'] 1999779421248
+
+Deep Copy Example---------------------------------------
+>>> lst1=[10,'PYTHON']
+>>> lst2=lst1 #Deep Copy 
+
+>>> print(lst1,id(lst1)) --------> [10, 'PYTHON'] 1999779301056
+>>> print(lst2,id(lst2)) --------> [10, 'PYTHON'] 1999779301056
+
+>>> lst1.append(100)
+
+>>> print(lst1,id(lst1)) --------> [10, 'PYTHON', 100] 1999779301056
+>>> print(lst2,id(lst2)) --------> [10, 'PYTHON', 100] 1999779301056
+
+>>> lst2.insert(1,'RS')
+
+>>> print(lst2,id(lst2)) --------> [10, 'RS', 'PYTHON', 100] 1999779301056
+>>> print(lst1,id(lst1)) --------> [10, 'RS', 'PYTHON', 100] 1999779301056
+
+---------------------------------------------------
+11] reverse()
+---------------------------------------------------
+>>> lst=[10,'RS',True,2+3j]
+>>> print(lst,id(lst)) --------> [10, 'RS', True, (2+3j)] 1922037277824
+
+>>> lst1=lst.reverse()
+>>> print(lst1) --------> None
+>>> print(lst,id(lst)) --------> [(2+3j), True, 'RS', 10] 1922037277824
+
+>>> lst=[10,21,-34,90.0,89]
+>>> print(lst,id(lst)) --------> [10, 21, -34, 90.0, 89] 1922037235520
+
+>>> lst.reverse()
+>>> print(lst,id(lst)) --------> [89, 90.0, -34, 21, 10] 1922037235520
+
+Important-----------------------------------------------
+>>> lst=[10,22,-34,45.67,89,60]
+>>> print(lst,id(lst)) --------> [10, 22, -34, 45.67, 89, 60] 1922037157952
+
+>>> lst=lst[::-1]
+>>> print(lst,id(lst)) --------> [60, 89, 45.67, -34, 22, 10] 1922037237696
+
+
+---------------------------------------------------
+12] sort()
+---------------------------------------------------
+Syntax-1--------------------------------------------
+>>> lst=[10,2,13,-12,56,3,7,12]
+>>> print(lst,type(lst),id(lst)) --------> [10, 2, 13, -12, 56, 3, 7, 12] <class 'list'> 1922037157952
+
+>>> lst.sort() #Ascending Order
+>>> print(lst,type(lst),id(lst)) --------> [-12, 2, 3, 7, 10, 12, 13, 56] <class 'list'> 1922037157952
+
+>>> lst.reverse() #Decending Order
+>>> print(lst,type(lst),id(lst)) --------> [56, 13, 12, 10, 7, 3, 2, -12] <class 'list'> 1922037157952
+
+Syntax-2-----------------------------------------------
+>>> lst=[10,2,13,-12,56,3,7,12]
+>>> print(lst,type(lst),id(lst)) --------> [10, 2, 13, -12, 56, 3, 7, 12] <class 'list'> 1922037156416
+
+>>> lst.sort(reverse=False)
+>>> print(lst,type(lst),id(lst)) --------> [-12, 2, 3, 7, 10, 12, 13, 56] <class 'list'> 1922037156416
+
+Syntax-3-----------------------------------------------
+>>> lst=[10,2,13,-12,56,3,7,12]
+>>> print(lst,type(lst),id(lst)) --------> [10, 2, 13, -12, 56, 3, 7, 12] <class 'list'> 1922037154304
+
+>>> lst.sort(reverse=True)
+>>> print(lst,type(lst),id(lst)) --------> [56, 13, 12, 10, 7, 3, 2, -12] <class 'list'> 1922037154304
+
+Additional Part-------------------------------------------------
+>>> lst=['Zoom','Rossum','Anil','Rajesh','Babu']
+>>> print(lst,type(lst),id(lst)) --------> ['Zoom', 'Rossum', 'Anil', 'Rajesh', 'Babu'] <class 'list'> 1922037163072
+>>> lst.sort()
+>>> print(lst,type(lst),id(lst)) --------> ['Anil', 'Babu', 'Rajesh', 'Rossum', 'Zoom'] <class 'list'> 1922037163072
+
+>>> lst=['Zoom','Rossum','Anil','Rajesh','Babu']
+>>> print(lst,type(lst),id(lst)) --------> ['Zoom', 'Rossum', 'Anil', 'Rajesh', 'Babu'] <class 'list'> 1922037154304
+>>> lst.sort(reverse=True)
+>>> print(lst,type(lst),id(lst)) --------> ['Zoom', 'Rossum', 'Rajesh', 'Babu', 'Anil'] <class 'list'> 1922037154304
+
+
+>>> lst=[10,'Aryan',45.56,True]
+>>> print(lst,type(lst),id(lst))) --------> [10, 'Aryan', 45.56, True] <class 'list'> 1922037165568
+>>> lst.sort()) --------> TypeError: '<' not supported between instances of 'str' and 'int'
+
+----------------------------------------------------------------------Inner List/ Nested List-------------------------------------------------------------------------  >>> studinfo=[10,'RS',[18,17,19],[80,76,79],'OUCET']
+>>> print(studinfo,type(studinfo)) --------> [10, 'RS', [18, 17, 19], [80, 76, 79], 'OUCET'] <class 'list'>
+>>> for val in studinfo:
+...     print(val,'---->',type(val))
+...
+10 ----> <class 'int'>
+RS ----> <class 'str'>
+[18, 17, 19] ----> <class 'list'>
+[80, 76, 79] ----> <class 'list'>
+OUCET ----> <class 'str'>
+
+>>> studinfo=[10,'RS',[18,17,19],[80,76,79],'OUCET']
+>>> print(studinfo,type(studinfo)) --------> [10, 'RS', [18, 17, 19], [80, 76, 79], 'OUCET'] <class 'list'>
+>>> studinfo[2] --------> [18, 17, 19]
+>>> studinfo[2][1] --------> 17
+>>> studinfo[2][-2] --------> 17
+>>> studinfo[2][-2]=16
+>>> studinfo[2] --------> [18, 16, 19]
+
+>>> print(studinfo,type(studinfo)) --------> [10, 'RS', [18, 16, 19], [80, 76, 79], 'OUCET'] <class 'list'>
+>>> studinfo[2].sort()
+>>> print(studinfo,type(studinfo)) --------> [10, 'RS', [16, 18, 19], [80, 76, 79], 'OUCET'] <class 'list'>
+>>> studinfo[-2].sort(reverse=True)
+>>> print(studinfo,type(studinfo)) --------> [10, 'RS', [16, 18, 19], [80, 79, 76], 'OUCET'] <class 'list'>
+
+
+>>> del studinfo[-2][1:]
+>>> print(studinfo,type(studinfo)) --------> [10, 'RS', [16, 18, 19], [80], 'OUCET'] <class 'list'>
+>>> studinfo[2].clear()
+>>> print(studinfo,type(studinfo)) --------> [10, 'RS', [], [80], 'OUCET'] <class 'list'>
+>>> studinfo[2].append(16)
+>>> studinfo[2].append(15)
+>>> print(studinfo,type(studinfo)) --------> [10, 'RS', [16, 15], [80], 'OUCET'] <class 'list'>
+>>> del studinfo[2]
+>>> print(studinfo,type(studinfo)) --------> [10, 'RS', [80], 'OUCET'] <class 'list'>
+>>> studinfo.insert(2,[14,16,12])
+>>> print(studinfo,type(studinfo)) --------> [10, 'RS', [14, 16, 12], [80], 'OUCET'] <class 'list'>                                                                                                                                                                                                                                             -----------------------------------------------                                                                                                                                                                                                                                                                                                 >>> matrix1=[[10,20,30],[40,50,60],[70,80,90]]
+>>> print(matrix1,type(matrix1))
+[[10, 20, 30], [40, 50, 60], [70, 80, 90]] <class 'list'>
+>>> for row in matrix1:
+...     print(row)
+...
+[10, 20, 30]
+[40, 50, 60]
+[70, 80, 90]
+
+>>> matrix2=[[1,2,3],[4,5,6],[7,8,9]]
+>>> for row in matrix2:
+...     print(row)
+...
+[1, 2, 3]
+[4, 5, 6]
+[7, 8, 9]
+
+>>> matrix3=matrix1+matrix2
+>>> for row in matrix3:
+...     print(row)
+...
+[10, 20, 30]
+[40, 50, 60]
+[70, 80, 90]
+[1, 2, 3]
+[4, 5, 6]
+[7, 8, 9]                                                                                                                                                               ======================================================================================================================================================================

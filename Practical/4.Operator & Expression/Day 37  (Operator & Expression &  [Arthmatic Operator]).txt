@@ -1,0 +1,148 @@
+-----------------------------------------------------------------------Operator & Expression---------------------------------------------------------------------------
+------------------------------------------------------------------------Arthematic Operator----------------------------------------------------------------------------
+----------------------
+Exxample1
+----------------------
+#Program for Demonstrating the functionality of Arthmatic Operator
+#ArthematicOperatorEx1.ppy
+a=int(input('Enter value of a:'))
+b=int(input('Enter the value of b:'))
+print('*'*50)
+print('Results of Arthematic Operator')
+print('*'*50)
+print('\t Sum of ({},{})={}'.format(a,b,a+b))
+print('\t Subtraction of ({},{})={}'.format(a,b,a-b))
+print('\t Multiplication of ({},{})={}'.format(a,b,a*b))
+print('\t Division of ({},{})={}'.format(a,b,a/b))
+print('\t Floor-Division of ({},{})={}'.format(a,b,a//b))
+print('\t Modulus of ({},{})={}'.format(a,b,a%b))
+print('\t PowerOff of ({},{})={}'.format(a,b,a**b))
+print('*'*50)
+
+----->	Enter value of a:10
+	Enter the value of b:3
+	**************************************************
+	Results of Arthematic Operator
+	**************************************************
+		 Sum of (10,3)=13
+		 Subtraction of (10,3)=7
+		 Multiplication of (10,3)=30
+	 	Division of (10,3)=3.3333333333333335
+	 	Floor-Division of (10,3)=3
+	 	Modulus of (10,3)=1
+	 	PowerOff of (10,3)=1000
+	**************************************************
+
+----------------------
+Exxample-2
+----------------------
+#Program For calculating the square root of a number
+#ArthmaticOperatorEx2.py
+n=float(input('Enter Value of n: '))
+res=n**0.5 #Or res=n**(1/2)
+print('sqrt({})={}'.format(n,res))
+
+  ---->	Enter Value of n: 25
+	sqrt(25.0)=5.0
+
+  ---->	Enter Value of n: -25
+	sqrt(-25.0)=(3.061616997868383e-16+5j)
+
+----------------------
+Exxample-3
+----------------------
+#Program to calculate cube root of a number
+#ArthmaticOperatorEx3.py
+a=float(input('Enter Value of a: '))
+#Calculating the cube root of a number
+cube_root=a**(1/3)
+#Displaying the data
+print('Cube root of ({}) is {}'.format(a,cube_root))
+
+ ----->	Enter Valueof a: 9
+	Cube root of (9.0) is 2.080083823051904
+
+ -----> Enter Value of a: -8
+	Cube root of (-8.0) is (1.0000000000000002+1.7320508075688772j)
+
+----------------------
+Exxample-4
+----------------------
+#program which will evaluate (a+b)2
+a=float(input("Enter the Value of a: "))
+b=float(input("Enter the Vallue of b: "))
+
+#Applying the formula with various logic
+logic1=(a+b)**2
+logic2=(a+b)*(a+b)
+logic3=a**2+2*a*b+b**2
+
+
+#Displaying the result
+print('*'*50)
+print('Answer with logic 1 is {}'.format(logic1))
+print('Answer with logic 2 is {}'.format(logic2))
+print('Answer with Logic 3 is {}'.format(logic3))
+print('*'*50)
+
+  ----> Enter the Value of a: 4.5
+	Enter the Vallue of b: -90
+	**************************************************
+	Answer with logic 1 is 7310.25
+	Answer with logic 2 is 7310.25
+	Answer with Logic 3 is 7310.25
+	**************************************************
+
+----------------------
+Exxample-5
+----------------------
+#Program for implementing the formula A to power m / A to the power n
+#ArthmaticOperatorEx5.py
+a=float(input("Enter the Value of a: "))
+m=float(input("Enter the value of m: "))
+n=float(input("Enter the Value of n: "))
+
+#Applying the formula
+logic1=(a**m)/(a**n)
+logic2=a**(m-n)
+
+#Displaying the result
+print('*'*50)
+print('The value of logic1 is {}'.format(logic1))
+print('The value of logic2 is {}'.format(logic2))
+print('*'*50)
+
+ ----->	Enter the Value of a: 4
+	Enter the value of m: 4
+	Enter the Value of n: 4
+	**************************************************
+	The value of logic1 is 1.0
+	The value of logic2 is 1.0
+	**************************************************
+
+
+Special Point-----------------------------------------------------------------------
+--------------
+Note-1
+--------------
+>>> print(10/3) -----> 3.3333333333333335
+>>> print(10//3) -----> 3
+
+--------------
+Note-2
+--------------
+>>> print(10.0/3) -----> 3.3333333333333335
+>>> print(10.0//3.0) -----> 3.0
+
+--------------
+Note-3
+--------------
+>>> print(10.0/3) -----> 3.3333333333333335
+>>> print(10.0//3) -----> 3.0
+
+--------------
+Note-4
+--------------
+>>> print(10/3.0) -----> 3.3333333333333335
+>>> print(10//3.0) -----> 3.0
+=====================================================================================X=================================================================================

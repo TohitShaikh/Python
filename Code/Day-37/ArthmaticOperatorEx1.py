@@ -1,0 +1,15 @@
+#Program for Demonstrating the functionality of Arthmatic Operator
+#ArthematicOperatorEx1.ppy
+a=int(input('Enter value of a:'))
+b=int(input('Enter the value of b:'))
+print('*'*50)
+print('Results of Arthematic Operator')
+print('*'*50)
+print('\t Sum of ({},{})={}'.format(a,b,a+b))
+print('\t Subtraction of ({},{})={}'.format(a,b,a-b))
+print('\t Multiplication of ({},{})={}'.format(a,b,a*b))
+print('\t Division of ({},{})={}'.format(a,b,a/b))
+print('\t Floor-Division of ({},{})={}'.format(a,b,a//b))
+print('\t Modulus of ({},{})={}'.format(a,b,a%b))
+print('\t PowerOff of ({},{})={}'.format(a,b,a**b))
+print('*'*50)

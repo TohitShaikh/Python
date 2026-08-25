@@ -1,0 +1,62 @@
+-------------------------------------------------------------------Sequence Category Data Type-------------------------------------------------------------------------
+---------------------------------------------------------------------------------str----------------------------------------------------------------------------------
+1)Single line string-------------------------------------------------------------------------------------
+>>> s1="python"
+>>> print(s1,type(s1)) ------>python <class 'str'>
+>>> s2='Python'
+>>> print(s2,type(s2)) ------>Python <class 'str'>
+>>> s3="A"
+>>> print(s3,type(s3)) ------>A <class 'str'>
+>>> s4='A'
+>>> print(s4,type(s4)) ------>A <class 'str'>
+
+>>> s1="12345"
+>>> print(s1,type(s1)) ------>12345 <class 'str'>
+>>> s2='Python3.11'
+>>> print(s2,type(s2)) ------>Python3.11 <class 'str'>
+>>> s3="!@#$%^^&*(()_++"
+>>> print(s3,type(s3)) ------>!@#$%^^&*(()_++ <class 'str'>
+>>> s4='Tohit1234@#'
+>>> print(s4,type(s4)) ------>Tohit1234@# <class 'str'>
+
+
+>>> addr1="Guido Rossum ----->SyntaxError: unterminated string literal (detected at line 1)
+
+>>> addr2='Guido Rossum ----->SyntaxError: unterminated string literal (detected at line 1)
+
+1)Multi line string-------------------------------------------------------------------------------------
+
+>>> addr1="""Guido Van Rossum
+... F-NO.: 3-4, hill side
+... python software foundation
+... Netherlands"""
+>>> print(addr1,type(addr1))
+ 		Guido Van Rossum
+		F-NO.: 3-4, hill side
+		python software foundation
+		Netherlands <class 'str'>
+
+
+>>> addr2='''Travis Oliphnat
+... HNO.: 12-34 Sea side
+... Numpy Organization
+... netherLand-56'''
+>>> print(addr2,type(addr2))
+		Travis Oliphnat
+		HNO.: 12-34 Sea side
+		Numpy Organization
+		netherLand-56 <class 'str'>
+
+-----------------------------------------------------------------------------------------------------------
+#Tripple Double Quotes & Triple Single Quotes with Single line string data
+
+>>> s1="""Python Progersmming"""
+>>> print(s1,type(s1)) ----->Python Progersmming <class 'str'>
+>>> s2='''Python Programming'''
+>>> print(s2,type(s2)) ----->Python Programming <class 'str'>
+>>> s3="""A"""
+>>> print(s3,type(s3)) ----->A <class 'str'>
+>>> s4='''A'''
+>>> print(s4,type(s4)) ----->A <class 'str'>
+
+------------------------------------------------------------------------------END--------------------------------------------------------------------------------------

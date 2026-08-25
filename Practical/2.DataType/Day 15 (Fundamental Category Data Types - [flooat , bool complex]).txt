@@ -1,0 +1,109 @@
+----------------------------------------------------------------Fundamental CategoryDataType--------------------------------------------------------------------------
+float------------------------------------------------------------------------------
+>>> a=12.34
+>>> print(a,type(a)) ------->12.34 <class 'float'>
+>>> a=10
+>>> b=1.2
+>>> c=a+b
+>>> print(a,type(a)) ------->10 <class 'int'>
+>>> print(b,type(b)) ------->1.2 <class 'float'>
+>>> print(c,type(c)) ------->11.2 <class 'float'>
+
+---------------------------------------------------------
+Scientific Notation
+---------------------------------------------------------
+>>> a=3e2
+>>> print(a,type(a)) ------->300.0 <class 'float'>
+>>> a=3e62
+>>> print(a,type(a)) ------->3e+62 <class 'float'>
+>>> b=100e-2
+>>> print(b,type(b)) ------->1.0 <class 'float'>
+
+----------------------------------------------------------
+
+>>> a=0.00000000000000000000000000000000000000000009
+>>> print(a,type(a))
+9e-44 <class 'float'>
+
+----------------------------------------------------------
+
+>>> a=0b10101.0b10101 ------->SyntaxError: invalid decimal literal
+>>> b=0o23.0b101010 ------->SyntaxError: invalid decimal literal
+>>> c=0xac.0o23 ------->SyntaxError: invalid decimal literal
+
+--------------------------------------------------------------------------------bool-----------------------------------------------------------------------------------
+>>> a=True
+>>> print(a,type(a)) ------->True <class 'bool'>
+>>> b=False
+>>> print(b,type(b)) ------->False <class 'bool'>
+
+----------------------------------------------------------
+
+>>> a=true ------->NameError: name 'true' is not defined. Did you mean: 'True'?
+>>> b=false ------->NameError: name 'false' is not defined. Did you mean: 'False'?
+
+----------------------------------------------------------
+
+>>> a=True
+>>> b=False
+>>> print(a+b) ------->1
+>>> print(b+b) ------->0
+>>> print(2*True+3) ------->5
+>>> print(2*(True+3)) ------->8
+>>> print(True+0b1010) ------->11
+>>> print(True-False+0xf) ------->16
+
+----------------------------------------------------------
+
+>>> print(True/True) ------->161.0
+>>> print(False/True) ------->160.0
+>>> print(False/True) ------->160.0
+>>> print(False/False) ------->16ZeroDivisionError: division by zero
+>>> print(True/False)) ------->16ZeroDivisionError: division by zero
+
+-----------------------------------------------------------------------------complex----------------------------------------------------------------------------------
+>>> a=2+3j
+>>> print(a,type(a)) ------->(2+3j) <class 'complex'>
+>>> b=-2-3j
+>>> print(b,type(b)) ------->(-2-3j) <class 'complex'>
+>>> c=2.4+6.5j
+>>> print(c,type(c)) ------->(2.4+6.5j) <class 'complex'>
+>>> d=-4.5-6.3j
+>>> print(d,type(d)) ------->(-4.5-6.3j) <class 'complex'>
+
+>>> e=10+2i ------->SyntaxError: invalid decimal literal
+---------------------------------------------------------
+
+>>> a=2j
+>>> print(a,type(a)) ------->2j <class 'complex'>
+>>> b=2.3j
+>>> print(b,type(b)) ------->2.3j <class 'complex'>
+>>> c=-3.2j
+>>> print(c,type(c)) ------->(-0-3.2j) <class 'complex'> //Important
+
+---------------------------------------------------------
+
+>>> a=2+3j
+>>> print(a.real) ------->2.0
+>>> print(a.imag) ------->3.0
+>>> b=2.3+6.3j
+>>> print(b.real) ------->2.3
+>>> print(b.imag) ------->6.3
+>>> c=2-3.4j
+>>> print(c.real) ------->2.0
+>>> print(c.imag) ------->-3.4
+>>> d=-3.5j
+>>> print(d.real) ------->-0.0
+>>> print(d.imag) ------->-3.5
+
+---------------------------------------------------------
+
+>>> a=2+3j
+>>> print(a.real) ------->2.0
+>>> print(a.imaginary) ------->AttributeError: 'complex' object has no attribute 'imaginary'
+>>> print(a.imag) ------->3.0
+--------------------------------------------------------------------------END-----------------------------------------------------------------------------------
+
+
+
+

@@ -1,0 +1,125 @@
+-----------------------------------------------------------Sequence Category Data Type-------------------------------------------
+-------------------------------------------------------------------str--------------------------------------------------------
+1)Indexing operation------------------------------------------------------------------------------
+
+>>> s='Python'
+>>> print(s,type(s)) ----->
+Python <class 'str'>
+>>> s[0] ----->'P'
+>>> s[1] ----->'y'
+>>> s[3] ----->'h'
+>>> s[5] ----->'n'
+>>> s[4] ----->'o'
+>>> s[2] ----->'t'
+
+>>> s[-6] ----->'P'
+>>> s[-5] ----->'y'
+>>> s[-4] ----->'t'
+>>> s[-3] ----->'h'
+>>> s[-2] ----->'o'
+>>> s[-1] ----->'n' 	
+
+Special Point---------------------------
+
+>>> s[True] ----->'y'
+>>> s[False] ----->'P'
+>>> s[-True] ----->'n'
+>>> s[-False] ----->'P'
+>>> s[10]  ----->IndexError: string index out of range
+>>> s[-10] ----->IndexError: string index out of range
+>>> s[0b1010-9] ----->'y'
+>>> s[0x1] ----->'y'
+>>> s[-(0xf-14)] ----->'n'
+
+>>> s='PYTHON PROG'
+>>> print(s,type(s)) ----->PYTHON PROG <class 'str'>
+>>> s[6] ----->' '       --->Space will also get a index assigned to it.
+>>> s[-5] ----->' '
+>>> s[10] ----->'G'
+>>> s[-11] ----->'P'
+>>> s[0] ----->'P'
+
+>>> 'JAVA'[2] ----->'V'   --->Shortcut of using indexing
+>>> 'JAVA'[-1] ----->'A'
+>>> 'JAVA'[-4] ----->'J'
+>>> 'HYDERABAD'[-0O1] ----->'D'
+>>> 'HYDERABAD'[0O1] ----->'Y'
+>>> 'HYDERABAD'[0B1] ----->'Y'
+>>> 'HYDERABAD'[0X1] ----->'Y'
+>>> 'HYDERABAD'[02] ----->SyntaxError: leading zeros in decimal integer literals are not permitted.
+-----------------------------------------------------------------------------------------------------
+2)Slicing operation----------------------------------------------------------------------------------
+-------------------------------
+Syntax-1 : strobj[Begin:End]
+-------------------------------
+Positive-----------------------
+>>> s='PYTHON'
+>>> print(s,type(s)) ----->PYTHON <class 'str'>
+>>> s[0:3] ----->'PYT'
+>>> s[2:5] ----->'THO'
+>>> s[5:2] ----->''
+>>> print(s[5:2]) ----->Space 
+>>> s[0:5] ----->'PYTHO'
+>>> s[3:5] ----->'HO'
+>>> s[3:6] ----->'HON'
+>>> s[3:4] -----> 'H'
+
+Negative----------------------
+>>> s[-6:-2] ----->'PYTH'
+>>> s[-6:-4] ----->'PY'
+>>> s[-4:-1] ----->'THO'
+>>> s[-2:-4] ----->''
+>>> s[-5:-1] ----->'YTHO'
+>>> s[-4:-2] ----->'TH'
+>>> s[-6:-1] ----->'PYTHO'
+
+>>> s[3:3] ----->''
+>>> s[-4:-4] ----->''
+>>> s[-6:-5] ----->'P'
+----------------------------------------------
+Sub-Rule: strobj[PositiveBegin:NegativeEnd]  && strobj[NegativeBegin:PositiveEnd]
+----------------------------------------------
+>>> s='PYTHON'
+>>> print(s,type(s)) ----->PYTHON <class 'str'>
+>>> s[0:-4] ----->'PY'
+>>> s[0:-1] ----->'PYTHO'
+>>> s[-6:5] ----->'PYTHO'
+>>> s[2:-1] ----->'THO'
+>>> s[-4:5] ----->'THO'
+>>> s[0:-2] ----->'PYTH'
+>>> s[-3:6] ----->'HON'
+
+Most Special Point---------------------------
+
+-By default, slicing moves in the Forward Direction (+1 step). If the end index
+ is behind the begin index in the forward path, the result is an empty string. []
+
+-Positive Begin and negative End with No Result
+
+>>> s='PYTHON'
+>>> print(s,type(s)) ----->PYTHON <class 'str'>
+>>> s[4:-6] ----->''
+>>> s[3:-5] ----->''
+>>> s[2:-3] ----->'T'
+>>> s[2:-6] ----->''
+>>> s[2:-4] ----->''
+
+-Negative Begin and Positive End with No Result
+>>> s='PYTHON'
+>>> print(s,type(s)) ----->PYTHON <class 'str'>
+>>> s[-4:2] ----->''
+>>> s[-2:2] ----->''
+>>> s[-2:5] ----->'O'
+>>> s[-5:0] ----->''
+
+>>> s='PYTHON'
+>>> print(s,type(s)) ----->PYTHON <class 'str'>
+>>> s[0:125] -----> ----->PYTHON'
+>>> s[-10:-1] ----->'PYTHO'
+>>> s[2:1000] ----->'THON'
+>>> s[-1000:-5] ----->'P'
+>>> s[-1000:-6] ----->''
+>>> s[-1000:1000] ----->'PYTHON'
+>>> s[-1000:5] ----->'PYTHO'
+>>> s[-6:1000] ----->'PYTHON'
+============================================================================X==========================================================================================

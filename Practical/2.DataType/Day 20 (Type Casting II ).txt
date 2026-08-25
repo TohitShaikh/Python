@@ -1,0 +1,211 @@
+------------------------------------------------------------------------Type Casting-----------------------------------------------------------------------------------
+----------------------------------------------------------------------------float()------------------------------------------------------------------------------------
+Example-1: int type into float type --Possible
+----------------------------------------------------------
+>>> a=100
+>>> print(a,type(a)) ------>100 <class 'int'>
+>>> b=float(a)
+>>> print(b,type(b)) ------>100.0 <class 'float'>
+>>> b=float(100)
+>>> print(b,type(b)) ------>100.0 <class 'float'>
+
+----------------------------------------------------------
+Example-2: bool type into float type --Possible
+----------------------------------------------------------
+>>> a=True
+>>> print(a,type(a)) ------>True <class 'bool'>
+>>> b=float(a)
+>>> print(b,type(b)) ------>1.0 <class 'float'>
+>>> b=float(False)
+>>> print(b,type(b)) ------>0.0 <class 'float'>
+
+----------------------------------------------------------
+Example-3: complex type into float type --Not possible
+----------------------------------------------------------
+>>> a=2+3j
+>>> print(a,type(a)) ------>(2+3j) <class 'complex'>
+>>> b=float(a) ------>TypeError: float() argument must be 
+                       a string or a real number, not 'complex'
+----------------------------------------------------------
+Example-4: str type into float type
+----------------------------------------------------------
+----------------------------------------------------------
+Case-1: str-int into float type --Possible
+----------------------------------------------------------
+>>> a='12'
+>>> print(a,type(a)) ------>12 <class 'str'>
+>>> b=float(a)
+>>> print(b,type(b)) ------>12.0 <class 'float'>
+>>> b=float('123')
+
+>>> print(b,type(b)) ------>123.0 <class 'float'>
+
+---------------------------------------------
+Case-2: str-float into float type --Possible
+---------------------------------------------
+>>> a='12.34'
+>>> print(a,type(a)) ------>12.34 <class 'str'>
+>>> b=float(a)
+>>> print(b,type(b)) ------>12.34 <class 'float'>
+>>> b=float('344.90')
+>>> print(b,type(b)) ------>344.9 <class 'float'>
+
+---------------------------------------------
+Case-3: str-bool type into float type --Not Possible
+---------------------------------------------
+>>> a='True'
+>>> print(a,type(a)) ------>True <class 'str'>
+>>> b=float(a) ------>ValueError: could not convert string to float: 'True'
+>>> b=float('False') ------>ValueError: could not convert string to float: 'False'
+
+---------------------------------------------
+Case-1: str-complex into float type --Not Possible
+---------------------------------------------
+>>> a='2+3j'
+>>> print(a,type(a)) ------>2+3j <class 'str'>
+>>> b=float(a) ------>ValueError: could not convert string to float: '2+3j'
+
+Special Point-----------------------------------
+>>> a='2+3j'
+>>> print(a,type(a)) ------>2+3j <class 'str'>
+>>> b=float(a[0])
+>>> print(b,type(b)) ------>2.0 <class 'float'>
+>>> b=float(a[2])
+>>> print(b,type(b)) ------>3.0 <class 'float'>
+
+---------------------------------------------
+Case-1: Pure-str into float type
+---------------------------------------------
+>>> a='Pyhton.Java'
+>>> print(a,type(a)) ------>Pyhton.Java <class 'str'>
+>>> b=float(a) ------>ValueError: could not convert string to float: 'Pyhton.Java'
+=================================================================================X=====================================================================================
+----------------------------------------------------------------------------bool()------------------------------------------------------------------------------------
+Example-1: int into bool type --Possible
+------------------------------------------------------------------
+
+>>> a=100
+>>> print(a,type(a)) ------>100 <class 'int'>
+>>> b=bool(a)
+>>> print(b,type(b)) ------>True <class 'bool'>
+>>> a=0
+>>> print(a,type(a)) ------>0 <class 'int'>
+>>> b=bool(a)
+>>> print(b,type(b)) ------>False <class 'bool'>
+
+>>> b=bool(-123)
+>>> print(b,type(b)) ------>True <class 'bool'>
+>>> b=bool(0b0000)
+>>> print(b,type(b)) ------>False <class 'bool'>
+
+------------------------------------------------------------------
+Example-2: float into bool type --Possible
+------------------------------------------------------------------
+>>> a=1.2
+>>> print(a,type(a)) ------>1.2 <class 'float'>
+>>> b=bool(a)
+>>> print(b,type(b)) ------>True <class 'bool'>
+>>> a=0.5
+>>> print(a,type(a)) ------>0.5 <class 'float'>
+>>> b=bool(a)
+>>> print(b,type(b)) ------>True <class 'bool'>
+>>> a=0.000000000000000000000000000000000000000000000000000001
+>>> print(a,type(a)) ------>1e-54 <class 'float'>
+>>> b=bool(a)
+>>> print(b,type(b)) ------>True <class 'bool'>
+>>> a=0.0
+>>> print(a,type(a)) ------>0.0 <class 'float'>
+>>> b=bool(a)
+>>> print(b,type(b)) ------>False <class 'bool'>
+
+Special Point(To be preacticed more)	------------------------------------------------
+>>> a=0.00000000000000000000000000000000000000000000000000000001
+>>> print(a,type(a)) ------>1e-56 <class 'float'>
+>>> b=bool(int(a))
+>>> print(b,type(b)) ------>False <class 'bool'>
+
+>>> a=0.000000000000000000000000000000000000000000000000001
+>>> print(a,type(a)) ------>1e-51 <class 'float'>
+>>> b=float(bool(int(a)))
+>>> print(b,type(b)) ------>0.0 <class 'float'>
+------------------------------------------------------------------
+Example-3: complex into bool type --Possible
+------------------------------------------------------------------
+>>> a=2+3j
+>>> print(a,type(a)) ------>(2+3j) <class 'complex'>
+>>> b=bool(a)
+>>> print(b,type(b)) ------>True <class 'bool'>
+>>> a=0+0j
+>>> print(a,type(a)) ------>0j <class 'complex'>
+>>> b=bool(a)
+>>> print(b,type(b)) ------>False <class 'bool'>
+
+------------------------------------------------------------------
+Examople-4: str into bool type
+------------------------------------------------------------------
+Case-1: str-int into bool type --Possible
+-----------------------------------------------------
+>>> a='123'
+>>> print(a,type(a)) ------>123 <class 'str'>
+>>> b=bool(a)
+>>> print(b,type(b)) ------>True <class 'bool'>
+
+Special Point-------------------------------
+>>> a='0'
+>>> print(a,type(a)) ------>0 <class 'str'>
+>>> b=bool(a)
+>>> print(b,type(b)) ------>True <class 'bool'>
+#Normally it a 0 but it is enclosed in the string bool will consideer it 
+as len(a) which is 1.
+
+-----------------------------------------------------
+Case-2: str-float into bool type
+-----------------------------------------------------
+>>> a='1.2'
+>>> print(a,type(a)) ------>1.2 <class 'str'>
+>>> b=bool(a)
+>>> print(b,type(b)) ------>True <class 'bool'>
+>>> a='0.0'
+>>> print(a,type(a)) ------>0.0 <class 'str'>
+>>> b=bool(a)
+>>> print(b,type(b)) ------>True <class 'bool'>
+>>> len(a) ------>3
+
+-----------------------------------------------------
+Case-3: str-complex into bool type --Possible
+-----------------------------------------------------
+>>> a='2+3j'
+>>> print(a,type(a)) ------>2+3j <class 'str'>
+>>> b=bool(a)
+>>> print(b,type(b)) ------>True <class 'bool'>
+
+Special Point-------------------------------
+>>> bool('0+0j') ----->True
+>>> b=bool('0+0j'[0])
+>>> print(b,type(b)) ------>True <class 'bool'>
+>>> b=bool(float('0+0j'[0]))
+>>> print(b,type(b)) ------>False <class 'bool'>
+
+-----------------------------------------------------
+Case-4: Pure-str into bool type
+-----------------------------------------------------
+>>> a='PYTHON'
+>>> print(a,type(a)) ------>PYTHON <class 'str'>
+>>> b=bool(a)
+>>> print(b,type(b)) ------>True <class 'bool'>
+>>> a='False'
+>>> print(a,type(a)) ------>False <class 'str'>
+>>> b=bool(a)
+>>> print(b,type(b)) ------>True <class 'bool'>
+
+>>> a='   '
+>>> print(a,type(a)) ------>    <class 'str'>
+>>> b=bool(a)
+>>> print(b,type(b)) ------>True <class 'bool'>
+
+>>> print(a,type(a)) ------> <class 'str'>
+>>> b=bool(a)
+>>> print(b,type(b)) ------>False <class 'bool'>
+>>> len(a) ------> 0 
+
+=============================================================================X=========================================================================================
