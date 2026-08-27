@@ -118,7 +118,7 @@ Example-2: float into bool type --Possible
 >>> b=bool(a)
 >>> print(b,type(b)) ------>False <class 'bool'>
 
-Special Point(To be preacticed more)	------------------------------------------------
+Special Point(To be practiced more------------------------------------------------
 >>> a=0.00000000000000000000000000000000000000000000000000000001
 >>> print(a,type(a)) ------>1e-56 <class 'float'>
 >>> b=bool(int(a))
